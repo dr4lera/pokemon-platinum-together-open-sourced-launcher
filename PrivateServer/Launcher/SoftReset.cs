@@ -15,7 +15,7 @@ static class NativeGameReset
         return info;
     }
 
-    internal static async Task<Process> Restart(string gameDirectory)
+    internal static async Task<Process> Restart(string gameDirectory, Func<ProcessStartInfo, Task<Process>>? launch = null)
     {
         var info = LaunchInfo(gameDirectory);
         var client = Directory.GetParent(info.WorkingDirectory)!.FullName;
@@ -31,7 +31,7 @@ static class NativeGameReset
         await GameSafety.CheckFile(info.FileName);
         using var other = FindTarget(info.FileName, required: false);
         if (other is not null) throw new IOException("Another private game window has opened. It was left running; no duplicate was started.");
-        return Process.Start(info) ?? throw new IOException("The private game closed but could not restart. Use Play to start it again.");
+        return launch is not null ? await launch(info) : Process.Start(info) ?? throw new IOException("The private game closed but could not restart. Use Play to start it again.");
     }
 
     static Process? FindTarget(string path, bool required = true)
@@ -62,7 +62,7 @@ sealed partial class Launcher
     async Task SoftResetGame()
     {
         Log("Reset requested. In the private game, confirm Yes on 'Close the game?' to discard unsaved progress. The launcher waits up to 60 seconds, then reopens at title. No keeps the game open.");
-        var restarted = await NativeGameReset.Restart(GameDir);
+        var restarted = await NativeGameReset.Restart(GameDir, LaunchWithGallery);
         game?.Dispose();
         game = restarted;
         restarted.EnableRaisingEvents = true;

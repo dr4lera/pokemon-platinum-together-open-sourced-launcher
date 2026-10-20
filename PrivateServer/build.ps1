@@ -33,8 +33,10 @@ Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'docs') -Destination (Join-Path 
 
 Open `Launcher/PlatinumPrivateLauncher.exe` and keep this complete folder together.
 Read the [setup documentation](docs/README.md) before hosting or importing saves.
-This is a development preview; native unattended simulation and custom map/sprite
-loading are unfinished. See [verification status](docs/status.md).
+Native gameplay, friend battles and trading work with matching prepared 0.1.7
+clients on the combined backend (user-confirmed). Dedicated unattended simulation,
+public matchmaking and custom map/story loading remain unfinished. Native PTTR
+trainer delivery is implemented; custom rendering needs verification. See [verification status](docs/status.md).
 
 - [Launcher, mail app and documentation](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher)
 - [Server](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-server)

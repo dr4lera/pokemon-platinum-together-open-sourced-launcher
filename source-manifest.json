@@ -2,27 +2,27 @@
   {
     "path": ".github/workflows/test.yml",
     "type": "file",
-    "sha256": "b55d3289cbcd85b0d2efbcb1fc3f94b9d23c0097439e3b9897eb868fda054d5b"
+    "sha256": "3d8790e48eab09ee707f4a24d62d23ba8dbe41f3ff4b7df6ae18c09965e7b616"
   },
   {
     "path": ".gitignore",
     "type": "file",
-    "sha256": "e79d21316d6b29114eb7c56823aba7255cb6749a5530e81046b64f8d1ea48415"
+    "sha256": "eb1089667267cbca0d51e4edb8e3096f11ca80b691e89eb16f5b88ff6cc1e664"
   },
   {
     "path": ".gitmodules",
     "type": "file",
-    "sha256": "e4566597170fde0792af604a476695c8175f134e25a64e976c007209daf492c6"
+    "sha256": "1e6ae85f5605dc2cf2e8f39b1deef0be17d72e9958020622f43a34699343b758"
   },
   {
     "path": "App/GameBuild.cs",
     "type": "file",
-    "sha256": "86b95e356076c09b77b4cf32f2160eb711d2c7937e020303b63558aba55c4b8e"
+    "sha256": "515b9c9fc525adb8cd7a420640debdbdf33d67abc51c03d1e2df4a7bc75dd0ec"
   },
   {
     "path": "App/PortSaveEditor.cs",
     "type": "file",
-    "sha256": "6a395a387f914318daeefef52b811656a9b7a759e507e902898c1d939e32e810"
+    "sha256": "255ba252cdc69543c34955203b948f26c10204420090221caa921e5c54aca786"
   },
   {
     "path": "LICENSE",
@@ -32,27 +32,27 @@
   {
     "path": "MapStudio",
     "type": "git-submodule",
-    "commit": "8753433aaeb5f131419825f7f4d55af3e3580bf2"
+    "commit": "dece77385bb6747a63de0d9efe5b6fbd0c901fe6"
   },
   {
     "path": "PrivateServer/Checks/GiftChecks.csproj",
     "type": "file",
-    "sha256": "17f7a22b712aff02ebf8dff13a647b8f175ccd0757d2cffb53b87cb5f5f57fcc"
+    "sha256": "0d0a3c40a79ba9b011b1e3c34c97678f79b55bd0a53a6cb9e046c688a9e3320a"
   },
   {
     "path": "PrivateServer/Checks/Program.cs",
     "type": "file",
-    "sha256": "e6db14c48b0f820ad01164db7c2b806b9dd86996fa2f1652e95b833922132300"
+    "sha256": "864263210c91582005979389773abcb0e29b8f157bd22d0ac32cdc1b96e3a23d"
   },
   {
     "path": "PrivateServer/DiscordChecks/DiscordChecks.csproj",
     "type": "file",
-    "sha256": "2dcebdbfccf5256e8594f64f66fe95781123df105ba6393cf105f1903f59a2f6"
+    "sha256": "9612969264748e08ccd409f14d6197a1579cf3b072a99b940550e5ac00428aab"
   },
   {
     "path": "PrivateServer/DiscordChecks/Program.cs",
     "type": "file",
-    "sha256": "3375342176dd0840a1de9fc9c6ec9ce336165e376ffe7514a9802b98a642219a"
+    "sha256": "984cf074fbb40e1d24e9a4e7ede5f949ac8ecd6f3c6a10ba9f6e42383e0e73a2"
   },
   {
     "path": "PrivateServer/Launcher/Assets/private-worlds.ico",
@@ -67,17 +67,17 @@
   {
     "path": "PrivateServer/Launcher/Assets/private-worlds.svg",
     "type": "file",
-    "sha256": "b1a28f9ce11f643fb9718b4e967a79d9f4a07f0ae564f3b4e520cf4a4dabc4fe"
+    "sha256": "5fe191f4870a3d687192c0cbb4fe6621f4062bb6748b8a84148da1bbde412cad"
   },
   {
     "path": "PrivateServer/Launcher/ControlBindings.cs",
     "type": "file",
-    "sha256": "5733e8a4974acb82c5a1936bcbad6c98a062d3d1632222aa60abb34a0709e41b"
+    "sha256": "d4125a039355abc64186eab623f2d27094af0ce59bfd1e7eaea4af61026188b3"
   },
   {
     "path": "PrivateServer/Launcher/ControlsView.cs",
     "type": "file",
-    "sha256": "b58589f11d1e89dc048bd8c04e64fcc144c4c892bcbc7e0931da91f3a376d9a7"
+    "sha256": "7aa215b26676c4721fa61db9c2e96e8781950863bc6726b1fee37cd749803eba"
   },
   {
     "path": "PrivateServer/Launcher/CreatorTools.cs",
@@ -97,12 +97,17 @@
   {
     "path": "PrivateServer/Launcher/DiscordOptions.cs",
     "type": "file",
-    "sha256": "9b54936f4cb1e4ba9b80ee1f3c6fe4374738af692b486144ed35e854f317b1e1"
+    "sha256": "4df214190153c4a70501ba43ce90344f9388f9832d10edf35247d55fd491d983"
   },
   {
     "path": "PrivateServer/Launcher/DiscordPresence.cs",
     "type": "file",
-    "sha256": "41344fd2038edbc3f1018c43321a9fbef440f4fc5cb146392f03162bc9f70846"
+    "sha256": "87b55c738a324e514a064ba5b424e599cd3de803f7faa70da796258f5c3f1b9c"
+  },
+  {
+    "path": "PrivateServer/Launcher/FriendCodes.cs",
+    "type": "file",
+    "sha256": "91583491a64d71a5db619959f8bd75720932ed3d09fce7b3b171eb56c6578b9a"
   },
   {
     "path": "PrivateServer/Launcher/GameSafety.cs",
@@ -112,42 +117,47 @@
   {
     "path": "PrivateServer/Launcher/GiftInbox.cs",
     "type": "file",
-    "sha256": "75a5a7c108a16aa97202a8e9e752caec4a10c3263a3bb063b235dce133ce12de"
+    "sha256": "241ebcbae894c379bcc1937ee7e290c569bdf18b115019559da65deb4d59a8a6"
   },
   {
     "path": "PrivateServer/Launcher/HelpView.cs",
     "type": "file",
-    "sha256": "7d0498ccb1ac8ef1adc4cfe59e9a939a1979903301747e240088175e49d467e2"
+    "sha256": "3dcf78ef3bab22eefbe3f29a1cae443418ff77bebeee70d33d7d0bebe8a0ba58"
   },
   {
     "path": "PrivateServer/Launcher/HomeView.cs",
     "type": "file",
-    "sha256": "7a4c2b5c35cbb2c48cf859375f84fff72d12dce18e27ef43f89521c8d6834295"
+    "sha256": "a09471896276a72b8ad5902cd6559c7bcf0b27e1dc94bb28c45732a46fdfea9a"
   },
   {
     "path": "PrivateServer/Launcher/JoinedWorlds.cs",
     "type": "file",
-    "sha256": "a20680f1209c60172ceb2c01be8c09c362ce87ae8234aafbbf8cb3449ae61af5"
+    "sha256": "3bef55dfb8db1211fdbb2364492596304d54efed2ca8567940208541039243cd"
   },
   {
     "path": "PrivateServer/Launcher/Launcher.csproj",
     "type": "file",
-    "sha256": "a5ca52860dd60d3f68e17d3139a150904efb1c08753db5f9b9963cbedd39c9d1"
+    "sha256": "90b31201fc04437280eb0bcd51848215ae33bf67a6377d5e86013321095d2348"
   },
   {
     "path": "PrivateServer/Launcher/LauncherView.cs",
     "type": "file",
-    "sha256": "d98d529dab10ee175b3dae74319d8a5448e9b34cd2d9b95757f636a7a156bf14"
+    "sha256": "836f43c9646c137c39be034b29ec20cbd1c8d5fcc9d722778871720ccf94442b"
   },
   {
     "path": "PrivateServer/Launcher/LocalServerConfig.cs",
     "type": "file",
-    "sha256": "b4aba93006ea3c295ee3a5cb06b340de8b93e2668130e83cdbd4968a2e5452f7"
+    "sha256": "d4c94a94ee4b87786e80b5b0fdde180ef5f4280fe125fc7d04f9b097586ebf66"
   },
   {
     "path": "PrivateServer/Launcher/NameBackup.cs",
     "type": "file",
     "sha256": "a016b7f40e432c9ac41697d08f96cfa726950954ce690b2e4d45405998edb051"
+  },
+  {
+    "path": "PrivateServer/Launcher/NativeGallerySession.cs",
+    "type": "file",
+    "sha256": "52c7899b7839eed620ef15bfc78468c3428102637b74185b818c8a3956365164"
   },
   {
     "path": "PrivateServer/Launcher/NativeMultiplayerConfig.cs",
@@ -167,7 +177,7 @@
   {
     "path": "PrivateServer/Launcher/Program.cs",
     "type": "file",
-    "sha256": "c9b49b0dd357438bde6660b0397d5bf107793f4d0dcd7995928b88a6e31a17c8"
+    "sha256": "ea937b00f727bd704d9b34286751a833ea61aacf0598fff953e4338d0e45173b"
   },
   {
     "path": "PrivateServer/Launcher/RomChecks.cs",
@@ -182,42 +192,42 @@
   {
     "path": "PrivateServer/Launcher/SoftReset.cs",
     "type": "file",
-    "sha256": "7256a9e39c0ae1f37b799730e42f83afa8ebe5ec96bcdc2c76e11fd9509bc14a"
+    "sha256": "a8b993a7fe2a7d7df1a547d00f3511e61c076f73b3994a5475adcf1606309d46"
   },
   {
     "path": "PrivateServer/MailSender/MailSender.csproj",
     "type": "file",
-    "sha256": "260aeedad18ed42c051603146a0912ad8bb7bd8b98c0d22ac67ed1dd322c56c1"
+    "sha256": "bb287adff7d36fc491f2511ee8c1c9a8a0840d944e81551df089091b08c1c489"
   },
   {
     "path": "PrivateServer/MailSender/Program.cs",
     "type": "file",
-    "sha256": "6ea93d3c171769ee32c49a90e3a8aba62bbe32d74e36b10e8527813990468086"
+    "sha256": "56cdef43713206fec8de0c8017388b4ea4225228c909c0da62267694dea16f38"
   },
   {
     "path": "PrivateServer/README.md",
     "type": "file",
-    "sha256": "95d63be15b19ebb35f4889de965a33650ad74cb6eabeeeeb76c2d56d99f5f76a"
+    "sha256": "12df49a9539662c590a42c3c6dd12ba37fba62ffc550be29d463d23283e83d68"
   },
   {
     "path": "PrivateServer/Server",
     "type": "git-submodule",
-    "commit": "a5d9ed7caf4fd8013706b3efafb5f845756c2f1f"
+    "commit": "dd3c3b3f53e1e2f669e69634ec6bfe6577c621bb"
   },
   {
     "path": "PrivateServer/Shared/MartGift.cs",
     "type": "file",
-    "sha256": "a9b9cf5226fdffba8c570d311562cfa0e8be7adba8e09e706f4a6fd0317e37ca"
+    "sha256": "5b9080b4b167774956d4f59d98aa5be8c7fc427f73684517abf3c608f9441f8b"
   },
   {
     "path": "PrivateServer/build.ps1",
     "type": "file",
-    "sha256": "fe8aa342f6749c0dd6b3e2bdc88ed2344e35d2999a6f4723049e5e0c4631e680"
+    "sha256": "14cbeadcc982030bed0c33a6634d43bc1e63acc1a6f9b9ace7818e67f011c121"
   },
   {
     "path": "PrivateServer/docs/README.md",
     "type": "file",
-    "sha256": "d14e8cddb73783ab6a4751e2afb02b9e7e32b7720ab13e1e6f69ecbdee4496d1"
+    "sha256": "8ccefb0a4a05bbd96c50d542e78643a3be7d037c5145f510f86b2bb8a46db096"
   },
   {
     "path": "PrivateServer/docs/controls-and-rules.md",
@@ -227,17 +237,22 @@
   {
     "path": "PrivateServer/docs/development.md",
     "type": "file",
-    "sha256": "3b747597ffc4ac2d8f600c41c2b2189d1346a3af8206a450ba25af90d8698c6f"
+    "sha256": "9868c870c1c3134fe0e7ea55559636568b2261445b0f3898a277aed680da60c6"
   },
   {
     "path": "PrivateServer/docs/discord.md",
     "type": "file",
-    "sha256": "cd44079d547ac5bfb01c1adea66a7b98f619dc91082c9dac3f0cfe2790aa7741"
+    "sha256": "04d4e268bc58e86ada1293f9fa131b048596520169c236797f7e626cf8a1456c"
+  },
+  {
+    "path": "PrivateServer/docs/friend-codes.md",
+    "type": "file",
+    "sha256": "e53c94c0aa7419fa08c02c959548d43d9add471c24521bd0151c40fa614c0ec8"
   },
   {
     "path": "PrivateServer/docs/mail-and-gifts.md",
     "type": "file",
-    "sha256": "26c319a13da2c1fb94cf06309f3af841d5c932a70a60c2e226691df8ecf594ce"
+    "sha256": "9cd1350e2d6dc3cae3c249b5eaa05d3a28cfc26f219ce61662d31e51089d8d99"
   },
   {
     "path": "PrivateServer/docs/maintenance.md",
@@ -247,66 +262,76 @@
   {
     "path": "PrivateServer/docs/maps.md",
     "type": "file",
-    "sha256": "67d9dabaacdb975200216b822e47ac857a03ececccf9279892be93f54600c4a5"
+    "sha256": "8619506b741299a27638721465d6107c009b7135250d4e190b2bc8f86d7c1080"
   },
   {
     "path": "PrivateServer/docs/moderation-and-plugins.md",
     "type": "file",
-    "sha256": "0686fd37598b8cf7b53f4bb13bd0744195663872537d384517cec0ed608cb0c3"
+    "sha256": "871b408e526f9773f7612e503ca8aaf68f89d0fda09504a2dc7f7cc9fd5a904b"
   },
   {
     "path": "PrivateServer/docs/native-017.md",
     "type": "file",
-    "sha256": "ba77684a10bbdb32d58e7a0ea8abae978bbce5d8be9a036893891b9d991882dc"
+    "sha256": "d91e75970ac633093ac409e051f68920b2d533c440451c0dd61b6766ceb952db"
+  },
+  {
+    "path": "PrivateServer/docs/native-gameplay-rules.md",
+    "type": "file",
+    "sha256": "40a89345ed26412371b9aa68ac12d935d435693d87a3191f33af6c9e9e5cdfef"
   },
   {
     "path": "PrivateServer/docs/players.md",
     "type": "file",
-    "sha256": "6d0d79fa26e3b412bd0f1b0c6b319cd3e6d98c319b58355662f0deb767563ec6"
+    "sha256": "08f26bd982c48dff64eaf5ea18f137e2279e1960f90e3da09a2ca11a1b8ccc8b"
   },
   {
     "path": "PrivateServer/docs/quick-start.md",
     "type": "file",
-    "sha256": "3e1085695a13eecf3aae82d58f0d995f09c3700ca7979ccd1c70ed1db00f6caf"
+    "sha256": "d5fb044b6940ba018db4b824d7a7c83ec9a70c3010a94c005745ec1dc729a78f"
   },
   {
     "path": "PrivateServer/docs/server-config.md",
     "type": "file",
-    "sha256": "53473a766c47ddc547031ac8d4e38424de26e7bd5a670fff9bd5b2f20a305751"
+    "sha256": "1680c8b1a4d2c85c4b0439d8f52de57b53ec12857924cbdcfc50271671b4401d"
   },
   {
     "path": "PrivateServer/docs/server-hosting.md",
     "type": "file",
-    "sha256": "b7a9b9f954579628b2081d0d8e4797eeba53c3ef034e4857fcd6ca5ea7c0cdba"
+    "sha256": "a689397cdfe2f3ccdafa61722cb158b944b06bb05d91b68337a107d062279f7f"
   },
   {
     "path": "PrivateServer/docs/soul-link.md",
     "type": "file",
-    "sha256": "6a69833bc12a698e7f4823d6584c840dcffb5c0e24ca4e736e6e2343c7c70077"
+    "sha256": "b33d2622778a0f08e060e77d811233fe776499a158394fefd6190e346595ebff"
   },
   {
     "path": "PrivateServer/docs/status.md",
     "type": "file",
-    "sha256": "fa2e8cef6975992b3d9c6486e121fc897ddf240fc5a0f3fe1b2c780ebf39bbfe"
+    "sha256": "43ecc77b66a36c2eca3d71983bbc59ef6290abe5917c07be2201fbfc461009a7"
   },
   {
     "path": "PrivateServer/docs/timing-and-movement.md",
     "type": "file",
-    "sha256": "cded01b159592e54b8ea8f6afaea226f9f3b803b38a22543a856b61be682798c"
+    "sha256": "d0f054e82dd35e511362ddc29361e54e60dd7fc86f76a6b7173c8b7123cc58be"
   },
   {
     "path": "PrivateServer/docs/trainer-sprites.md",
     "type": "file",
-    "sha256": "6fb59804680ce8bfed6911a5131c64211916acac63a60a6f915835cdc69f9532"
+    "sha256": "c6477b48449e8f3940ac1953eca0c14d2f026e02eee600b6e70fdb404a49b42f"
+  },
+  {
+    "path": "PrivateServer/docs/upgrade-0110.md",
+    "type": "file",
+    "sha256": "19d084328d03e35f976bb06cc7ad4b3d25834c4089486a774784689b2d5d51b6"
   },
   {
     "path": "README.md",
     "type": "file",
-    "sha256": "e7c4095b39ecfe318c137d66a1c439006fe5b957764d5cc7b527fe77ef94737d"
+    "sha256": "765747addd10a0ebf272d77bb4c3f57149dbdd56895e12560761298d42905fbb"
   },
   {
     "path": "THIRD_PARTY_NOTICES.md",
     "type": "file",
-    "sha256": "5fc9ce3a8ed50f08f0bcffe98008d84e317003445473061c3ad921a972fbef5a"
+    "sha256": "583a13c82c4aa6fa76278b4ca184360e6b75d503462767082de26a808164d537"
   }
 ]

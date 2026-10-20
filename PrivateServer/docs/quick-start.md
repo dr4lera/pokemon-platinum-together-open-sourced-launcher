@@ -31,7 +31,11 @@ build and remaining adapter restrictions. The quarantined 0.1.6 build stays bloc
 
 ## Before inviting friends
 
-Read [the current support table](status.md). The backend supports social messages,
-parties and authenticated relay routing, but complete two-player native gameplay
-and unattended world simulation still require verification and implementation.
-Do not treat this development build as a replacement for a finished dedicated server.
+Use matching project-prepared clients and the combined backend. Native gameplay,
+friend battles and trading are user-confirmed with 0.1.7. Join the party by its
+native code or optional [community friend code](friend-codes.md), then use the
+game's Party menu to enter the host's world. The host must return from Inverna
+to their own world first. Both launchers must select the same reachable server.
+
+Read [verification status](status.md) for remaining limits, including public
+matchmaking, interrupted-trade recovery and unattended world simulation.

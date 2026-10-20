@@ -45,7 +45,7 @@ relay entry path below, including after a backend restart. Automatic shortcut
 handoff, remote gameplay, cross-map travel and recovery still need testing.
 
 The game-mode page reports available implementation rather than unlocking every
-button. Adventures/Rifts, guilds, trading, public PvP and other unsupported modes
+button. Adventures/Rifts, guilds, public matchmaking and other unsupported modes
 need their own implementation and native tests.
 
 
@@ -113,3 +113,13 @@ inside `Client`: `Game/online-sign-in.dat` and
 running game/concurrent file change, rejects linked paths and retains the previous
 protected file as `.previous`. It does not import the original game's account.
 Treat these files and backups as private; never include them in a release.
+
+
+## Native gameplay, battles and trades — dev12
+
+The user confirmed native gameplay, friend battles and trading with matching
+prepared 0.1.7 clients on the combined backend. Use the game's native party,
+battle and trade controls. Public matchmaking is separate and unfinished.
+Leave Inverna for your home world before a guest selects Party → Join World.
+Optional [community friend codes](friend-codes.md) join the party; they do not
+automatically allocate or enter the world. Back up private saves before upgrading.

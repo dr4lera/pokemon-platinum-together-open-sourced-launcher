@@ -9,9 +9,24 @@ host from a stock official client is unsupported in this preview; a user reporte
 **World not found**. Official game-file compatibility does not establish
 official-service interoperability. See [connection compatibility](PrivateServer/docs/players.md#connection-compatibility).
 
+Native gameplay, friend battles and trading work with matching project-prepared
+0.1.7 clients on the combined private backend, confirmed by the user on
+2026-10-20. Dev12 also fixes Inverna movement packets, trainer names/appearance
+updates and world allocation while the host is still in the city. Optional
+community friend codes are available. See [verification status](PrivateServer/docs/status.md).
+
+## Independent gameplay client
+
+The current launcher still runs a separately prepared game supplied by the player.
+The [source-client migration](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-client)
+is a separate public project. Its own cap, traded-OT and capture rules are implemented;
+full Together gameplay/network/content parity is unfinished. See [the distinction
+and inspected native rules](PrivateServer/docs/native-gameplay-rules.md). New
+releases remain paused during this migration.
+
 ## Downloads
 
-**[Download the full Windows bundle — dev11 preview](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/releases/download/v0.1.0-dev.11/PokemonPlatinumTogetherOpenSourced-Windows-x64-dev11.zip)**
+**[Download the full Windows bundle â€” dev11 preview](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/releases/download/v0.1.0-dev.11/PokemonPlatinumTogetherOpenSourced-Windows-x64-dev11.zip)**
 
 Extract the complete ZIP and open `Launcher/PlatinumPrivateLauncher.exe`. Keep
 the folder together. MailSender, Map Studio, the backend and Windows runtimes
@@ -25,10 +40,10 @@ are included. Read the [quick start](PrivateServer/docs/quick-start.md) first.
 | Separate Inverna hosting | [Inverna release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-inverna-server/releases/tag/v0.1.0-dev.11) | [Inverna setup](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-inverna-server#first-run) |
 | Separate world backend hosting | [World release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-world-server/releases/tag/v0.1.0-dev.11) | [World setup](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-world-server#first-run) |
 
-All five repositories have matching dev11 **development previews**. Each release
-includes a SHA-256 checksum file and documents its tested
-scope and unfinished native features. The Latest label identifies the current
-download; it does not establish completion of the native gameplay rework.
+The last published downloads are dev11 with SHA-256 checksums. Dev12 source
+updates are staged; new release publication is paused during client migration.
+Native gameplay, battling and trading are user-confirmed. Dedicated unattended
+world simulation, public matchmaking and custom map/story execution remain unfinished.
 
 ## Project repositories
 
@@ -43,7 +58,7 @@ download; it does not establish completion of the native gameplay rework.
 - [Full documentation](PrivateServer/docs/README.md)
 - [Install and play](PrivateServer/docs/quick-start.md)
 - [Host a server, LAN and Internet relay](PrivateServer/docs/server-hosting.md)
-- [Mail, Pokémon, eggs and gifts](PrivateServer/docs/mail-and-gifts.md)
+- [Mail, PokÃ©mon, eggs and gifts](PrivateServer/docs/mail-and-gifts.md)
 - [Map packs](PrivateServer/docs/maps.md)
 - [Custom trainer sprites](PrivateServer/docs/trainer-sprites.md)
 - [Backups and troubleshooting](PrivateServer/docs/maintenance.md)
@@ -76,14 +91,16 @@ The 0.1.7 gift save adapter is enabled after a separate native-format audit and
 copied-save checks. Native collection remains unverified; the legacy injected
 trainer remains disabled for 0.1.7. See [0.1.7 evidence and limits](PrivateServer/docs/native-017.md).
 
-Manual local relay joining is verified with two unmodified 0.1.5 clients through
-Menu → Party → Join World after joining the party code. A guest also crossed
-Eterna Forest → Route 205 and back while the host stayed stationary and both
-remained connected. That verifies the tested route, not every map or story event.
-Automatic shortcut handoff, Soul Link startup, arbitrary-FPS native gameplay,
-unattended world simulation and native custom map/sprite loading remain unfinished.
-Backend tests and editor previews do not establish those features. See the linked
-status page before deploying.
+Use matching prepared clients and the combined backend for player-hosted co-op,
+friend battles and trades. Enter a friend's world through the native Party menu;
+friend-code membership does not automatically move the game. Leave Inverna for
+your own world before a guest joins it.
+
+Custom trainer support now includes owned native PTTR pack publication, native
+gallery delivery and appearance metadata. In-game custom-art rendering still
+needs verification, and the editor's authoring ZIP is not a native PTTR pack.
+See [trainer sprites](PrivateServer/docs/trainer-sprites.md). Official 0.1.10
+support awaits the released game artifact; no 0.1.10 parity is claimed.
 
 ## Credits and license
 
