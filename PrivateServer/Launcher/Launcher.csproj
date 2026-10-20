@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>WinExe</OutputType><ApplicationIcon>Assets/private-worlds.ico</ApplicationIcon><TargetFramework>net10.0-windows</TargetFramework><UseWindowsForms>true</UseWindowsForms><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings><AssemblyName>PlatinumPrivateLauncher</AssemblyName><ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode></PropertyGroup>
+  <ItemGroup><PackageReference Include="PKHeX.Core" Version="26.10.18" /><Compile Include="../Shared/MartGift.cs" Link="MartGift.cs" /><Compile Include="../../App/PortSaveEditor.cs" Link="PortSaveEditor.cs" /></ItemGroup>
+  <ItemGroup><Compile Include="../../App/GameBuild.cs" Link="GameBuild.cs" /></ItemGroup>
+  <ItemGroup><EmbeddedResource Include="Assets/private-worlds.ico" LogicalName="launcher.ico" /></ItemGroup>
+</Project>

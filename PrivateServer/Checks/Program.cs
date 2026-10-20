@@ -1,0 +1,13 @@
+using System.Buffers.Binary;
+using System.Security.Cryptography;
+using PlatinumGifts;
+using PlatinumTrainer;
+byte[] Synthetic(){var b=new byte[PortSaveEditor.FileSize];for(int sector=0;sector<2;sector++){int normal=sector*0x40000;BinaryPrimitives.WriteUInt16LittleEndian(b.AsSpan(normal+MartGift.Offset+MartGift.BlockSize-4),PortSaveEditor.Crc(b.AsSpan(normal+MartGift.Offset,MartGift.BlockSize-4)));for(int block=0;block<2;block++){int length=block==0?PortSaveEditor.NormalSize:PortSaveEditor.BoxSize,start=normal+(block==0?0:PortSaveEditor.NormalSize),footer=start+length-20;BinaryPrimitives.WriteUInt32LittleEndian(b.AsSpan(footer),1);BinaryPrimitives.WriteUInt32LittleEndian(b.AsSpan(footer+4),(uint)sector+1);BinaryPrimitives.WriteUInt32LittleEndian(b.AsSpan(footer+8),(uint)length);BinaryPrimitives.WriteUInt32LittleEndian(b.AsSpan(footer+12),0x20060623);b[footer+16]=(byte)block;BinaryPrimitives.WriteUInt16LittleEndian(b.AsSpan(footer+18),PortSaveEditor.Crc(b.AsSpan(start,length-20)));}}return b;}
+var original=args.Length==0?Synthetic():File.ReadAllBytes(args[0]);var hash=SHA256.HashData(original);var doc=MartGift.Layout(original);var gift=MartGift.Item(467);var edited=MartGift.Build(original,gift);var after=MartGift.Layout(edited);int at=doc.NormalBase+MartGift.Offset;
+if(after.NormalBase!=doc.NormalBase||after.BoxBase!=doc.BoxBase)throw new Exception("Save generation changed");
+for(int i=0;i<original.Length;i++)if(original[i]!=edited[i]&&!(i>=at&&i<at+MartGift.BlockSize)&&!(i>=doc.NormalBase+PortSaveEditor.NormalSize-2&&i<doc.NormalBase+PortSaveEditor.NormalSize))throw new Exception("Unrelated save bytes changed");
+var filled=edited;int n=1;while(true){try{filled=MartGift.Build(filled,gift);n++;if(n>8)throw new Exception("Gift capacity overflow");}catch(IOException e)when(e.Message.Contains("8 gifts")){break;}}
+var corrupted=(byte[])original.Clone();corrupted[MartGift.Offset]^=1;corrupted[0x40000+MartGift.Offset]^=1;bool rejected=false;try{MartGift.Build(corrupted,gift);}catch(IOException){rejected=true;}if(!rejected)throw new Exception("Bad checksum accepted");
+if(args.Length>1){var pgt=MartGift.Pokemon(File.ReadAllBytes(args[1]));MartGift.Validate(pgt);File.WriteAllBytes(Path.Combine(args[2],"private-egg-fixture.pgt"),pgt);}
+if(!hash.SequenceEqual(SHA256.HashData(original))||args.Length>0&&!hash.SequenceEqual(SHA256.HashData(File.ReadAllBytes(args[0]))))throw new Exception("Input save changed");
+if(args.Length>2)File.WriteAllBytes(Path.Combine(args[2],"private-mart-save-fixture.bin"),edited);Console.WriteLine("Gift block/whole-save checksums, full queue refusal, unrelated-byte preservation and input preservation passed. Queue capacity: "+n);

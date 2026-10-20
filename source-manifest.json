@@ -1,0 +1,217 @@
+[
+  {
+    "path": ".github/workflows/test.yml",
+    "type": "file",
+    "sha256": "dc9bedaa0a71cbb34ece3c5ae4aab70b1de5a87f8a68180dbb5e54fadd76f10d"
+  },
+  {
+    "path": ".gitignore",
+    "type": "file",
+    "sha256": "e79d21316d6b29114eb7c56823aba7255cb6749a5530e81046b64f8d1ea48415"
+  },
+  {
+    "path": ".gitmodules",
+    "type": "file",
+    "sha256": "5f79bde404cca97839a3b93d6e4add3ea2464e7ac417cb807e8b11a8a92e9e3a"
+  },
+  {
+    "path": "App/GameBuild.cs",
+    "type": "file",
+    "sha256": "90740e2c6c093e2c34ef65350729cf4ae5a4b2f0a2b1fc02ecb7765c559b4c34"
+  },
+  {
+    "path": "App/PortSaveEditor.cs",
+    "type": "file",
+    "sha256": "6a395a387f914318daeefef52b811656a9b7a759e507e902898c1d939e32e810"
+  },
+  {
+    "path": "LICENSE",
+    "type": "file",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  {
+    "path": "MapStudio",
+    "type": "submodule",
+    "commit": "cdea5008fd663dcfea5f15d06b0e54e600d65f26"
+  },
+  {
+    "path": "PrivateServer/Checks/GiftChecks.csproj",
+    "type": "file",
+    "sha256": "17f7a22b712aff02ebf8dff13a647b8f175ccd0757d2cffb53b87cb5f5f57fcc"
+  },
+  {
+    "path": "PrivateServer/Checks/Program.cs",
+    "type": "file",
+    "sha256": "e6db14c48b0f820ad01164db7c2b806b9dd86996fa2f1652e95b833922132300"
+  },
+  {
+    "path": "PrivateServer/Launcher/Assets/private-worlds.ico",
+    "type": "file",
+    "sha256": "5d425fba48212da3f7cfe83ca2385bf90f418c4774acd54daccadecc1e0c8edc"
+  },
+  {
+    "path": "PrivateServer/Launcher/Assets/private-worlds.svg",
+    "type": "file",
+    "sha256": "b1a28f9ce11f643fb9718b4e967a79d9f4a07f0ae564f3b4e520cf4a4dabc4fe"
+  },
+  {
+    "path": "PrivateServer/Launcher/ControlBindings.cs",
+    "type": "file",
+    "sha256": "5733e8a4974acb82c5a1936bcbad6c98a062d3d1632222aa60abb34a0709e41b"
+  },
+  {
+    "path": "PrivateServer/Launcher/ControlsView.cs",
+    "type": "file",
+    "sha256": "28f07646ea69b6392e6a20e9dcbbec5798fc2ad56d86ebd67618dc1be4d7d4f6"
+  },
+  {
+    "path": "PrivateServer/Launcher/CreatorTools.cs",
+    "type": "file",
+    "sha256": "ea62a5d865b279edecbdfaac543c9df349a7f8e4e148f34b70c469552d93df17"
+  },
+  {
+    "path": "PrivateServer/Launcher/GiftInbox.cs",
+    "type": "file",
+    "sha256": "040557cc1168942c783deb6e4b1d61c7c614e4d3dbf1d6002ff919ecd4417210"
+  },
+  {
+    "path": "PrivateServer/Launcher/HelpView.cs",
+    "type": "file",
+    "sha256": "24a8e5e0cba87a2dde42cb5270a69dc5f3e8f40397c0375081640e6bc99a5554"
+  },
+  {
+    "path": "PrivateServer/Launcher/HomeView.cs",
+    "type": "file",
+    "sha256": "7a4c2b5c35cbb2c48cf859375f84fff72d12dce18e27ef43f89521c8d6834295"
+  },
+  {
+    "path": "PrivateServer/Launcher/Launcher.csproj",
+    "type": "file",
+    "sha256": "a5ca52860dd60d3f68e17d3139a150904efb1c08753db5f9b9963cbedd39c9d1"
+  },
+  {
+    "path": "PrivateServer/Launcher/LauncherView.cs",
+    "type": "file",
+    "sha256": "edd64e15b8e259b5afcfd973b765958173949933256f671776ebe9ad87e7a3df"
+  },
+  {
+    "path": "PrivateServer/Launcher/NameBackup.cs",
+    "type": "file",
+    "sha256": "a016b7f40e432c9ac41697d08f96cfa726950954ce690b2e4d45405998edb051"
+  },
+  {
+    "path": "PrivateServer/Launcher/Program.cs",
+    "type": "file",
+    "sha256": "49d4b862765a6a99ca26010a8d1fc32f109c3bd10cc0b0dc99b1456e4b521808"
+  },
+  {
+    "path": "PrivateServer/Launcher/RelayHosting.cs",
+    "type": "file",
+    "sha256": "b2fc44af9b6b6fa9b1d2b4cc31501483921af344bc36a3d327f98d20e0dd1be9"
+  },
+  {
+    "path": "PrivateServer/Launcher/RomChecks.cs",
+    "type": "file",
+    "sha256": "9b917bca0c941a56fc774828cca335645bd3490e1aec8c82a9398d3646b06e02"
+  },
+  {
+    "path": "PrivateServer/Launcher/RomImport.cs",
+    "type": "file",
+    "sha256": "874e43a9f9b051100fa027e22b938f10d4fe84a201514a1692d1af29dbb7504a"
+  },
+  {
+    "path": "PrivateServer/MailSender/MailSender.csproj",
+    "type": "file",
+    "sha256": "260aeedad18ed42c051603146a0912ad8bb7bd8b98c0d22ac67ed1dd322c56c1"
+  },
+  {
+    "path": "PrivateServer/MailSender/Program.cs",
+    "type": "file",
+    "sha256": "6ea93d3c171769ee32c49a90e3a8aba62bbe32d74e36b10e8527813990468086"
+  },
+  {
+    "path": "PrivateServer/README.md",
+    "type": "file",
+    "sha256": "95d63be15b19ebb35f4889de965a33650ad74cb6eabeeeeb76c2d56d99f5f76a"
+  },
+  {
+    "path": "PrivateServer/Server",
+    "type": "submodule",
+    "commit": "f1cd9e6dd13ec7d7681dbf0d4b0e322b110e23b2"
+  },
+  {
+    "path": "PrivateServer/Shared/MartGift.cs",
+    "type": "file",
+    "sha256": "bdaabb0e4637b3ac4963706755ebb3c48f610552993af34cab45dd103a92057d"
+  },
+  {
+    "path": "PrivateServer/build.ps1",
+    "type": "file",
+    "sha256": "18ee68bb82a959e5f21a7b19dda90e5c81b098067a5350fa0e02112e09960dbd"
+  },
+  {
+    "path": "PrivateServer/docs/README.md",
+    "type": "file",
+    "sha256": "b1fc3702a743b6dd2397174285993123962e27a74109fbe389002d14e959d95f"
+  },
+  {
+    "path": "PrivateServer/docs/controls-and-rules.md",
+    "type": "file",
+    "sha256": "281e2fc1c15e43ce49986b4036b6a16846874678a641a7ed77ab6e6df30022e3"
+  },
+  {
+    "path": "PrivateServer/docs/development.md",
+    "type": "file",
+    "sha256": "27478012ac79406c035795c2a135cff32511d6995e8395dbaa75ed0c910a5e80"
+  },
+  {
+    "path": "PrivateServer/docs/mail-and-gifts.md",
+    "type": "file",
+    "sha256": "db218e38f8779b91dfe582739e7d70bf6782e577963dd02041ef3b4b26a010ca"
+  },
+  {
+    "path": "PrivateServer/docs/maintenance.md",
+    "type": "file",
+    "sha256": "65908a2b834bdc1571e207223d62f308e9f0f670f925bd07870ebb1bce8d3daf"
+  },
+  {
+    "path": "PrivateServer/docs/maps.md",
+    "type": "file",
+    "sha256": "f728ba7befbfa9f36a90955b76ad1c8cde6c9f09aab7b1afb1c680d693aac729"
+  },
+  {
+    "path": "PrivateServer/docs/players.md",
+    "type": "file",
+    "sha256": "abcd9f7b56da450da83ee9c05cfb89b3ad0d6c9940e26c1157aaee0b3a1792a8"
+  },
+  {
+    "path": "PrivateServer/docs/quick-start.md",
+    "type": "file",
+    "sha256": "30752d67f6308785d92830993a28d4813df5f98f252ba4e259fdb89710241afa"
+  },
+  {
+    "path": "PrivateServer/docs/server-hosting.md",
+    "type": "file",
+    "sha256": "3a62c9124235c46d658f1b2bda1621b0039ebc3555ced77c836d00db88b2cf19"
+  },
+  {
+    "path": "PrivateServer/docs/status.md",
+    "type": "file",
+    "sha256": "5b5c0b722b67127a3b14dd24344f89cc97f1d45b4e9c1f3bfc35550323cbfa82"
+  },
+  {
+    "path": "PrivateServer/docs/trainer-sprites.md",
+    "type": "file",
+    "sha256": "6fb59804680ce8bfed6911a5131c64211916acac63a60a6f915835cdc69f9532"
+  },
+  {
+    "path": "README.md",
+    "type": "file",
+    "sha256": "0a9bd61532a5090f02c4d9b17fa7992c500198129a83db3d566dc2107ea5ff5a"
+  },
+  {
+    "path": "THIRD_PARTY_NOTICES.md",
+    "type": "file",
+    "sha256": "5fc9ce3a8ed50f08f0bcffe98008d84e317003445473061c3ad921a972fbef5a"
+  }
+]

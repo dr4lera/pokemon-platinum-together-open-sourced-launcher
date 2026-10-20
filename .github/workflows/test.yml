@@ -1,0 +1,24 @@
+name: Launcher and gift checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet build PrivateServer/Launcher/Launcher.csproj -c Release
+      - run: dotnet build PrivateServer/MailSender/MailSender.csproj -c Release
+      - run: dotnet run --project PrivateServer/Checks/GiftChecks.csproj -c Release
+      - shell: pwsh
+        run: |
+          foreach($app in @(@('Launcher','PlatinumPrivateLauncher'),@('MailSender','PlatinumMailSender'))){
+            $exe="./PrivateServer/$($app[0])/bin/Release/net10.0-windows/$($app[1]).exe"
+            $p=Start-Process -FilePath $exe -ArgumentList '--selftest' -Wait -PassThru -WindowStyle Hidden
+            if($p.ExitCode -ne 0){throw "$($app[0]) self-test failed"}
+          }
