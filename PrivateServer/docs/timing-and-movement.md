@@ -45,3 +45,14 @@ Current evidence is limited to independent local native relay movement in the
 have not passed. Windows Security blocked the separate 0.1.6 lab executable on
 2026-10-19, so that build's native tests are currently blocked. Source/build tests
 alone must not be presented as proof that these gameplay requirements work.
+
+
+## Implemented backend elapsed-time correction
+
+Connection traffic windows and relay byte/packet budgets now use a monotonic
+clock (`performance.now`) instead of wall-clock `Date.now`. Byte refill is
+proportional to elapsed seconds with a capped burst after stalls. Tests cover
+clock-zero boundaries, backward-clock defense and equal refill at 30/60/120/144
+callback rates. Protocol timestamps and durable expiry remain UTC-based.
+This concerns transport scheduling; the native game simulation/render loop still
+requires its own implementation review and in-game verification.

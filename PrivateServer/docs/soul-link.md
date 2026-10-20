@@ -38,3 +38,15 @@ integration issue, not evidence that Soul Link needs a custom persistent server.
 
 Discord invites use the same co-op party flow; see [Discord setup](discord.md).
 Custom persistent server configuration remains separate: [hosting](server-hosting.md).
+
+
+## Launcher mode-preservation correction
+
+The launcher previously replaced the native multiplayer configuration on every
+launch with `last solo`, dropping the game's saved mode and server entries.
+It now updates only the private hub address/key and preserves the native `last`
+line, saved server entries and unknown settings. Only a fresh configuration gets
+a default solo entry. The update is staged atomically and refuses a concurrent
+native-game/settings change. Preservation/idempotency checks pass. This fixes a
+launcher regression; it does not by itself establish Soul Link startup or repair
+the native solo-creation context described above.

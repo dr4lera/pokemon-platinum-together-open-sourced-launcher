@@ -7,7 +7,7 @@ using System.Text.Json;
 namespace PlatinumPrivateLauncher;
 static class Program
 {
-    [STAThread] static void Main(string[] args){ApplicationConfiguration.Initialize();if(args.Contains("--selftest")){LauncherChecks.Run();RomChecks.Run();ControlBindings.SelfTest();ResetKeys.SelfTest();File.WriteAllText(Path.Combine(AppContext.BaseDirectory,"rom-selftest.json"),"{\"passed\":true,\"checks\":[\"FNT/FAT extraction\",\"out of bounds rejection\",\"unsafe path rejection\"]}");return;}using var mutex=new Mutex(true,"Local\\PlatinumPrivateLauncher-"+Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(AppContext.BaseDirectory)))[..20],out var first);var invite=DiscordLaunch.Secret(args);if(!first){try{DiscordLaunch.Forward(invite).GetAwaiter().GetResult();}catch{MessageBox.Show("The existing launcher did not respond. Bring it to the front and try the invite again.");}return;}using var window=new Launcher();using var stop=new CancellationTokenSource();Task? listener=null;window.Shown+=(_,_)=>{listener=DiscordLaunch.Listen(window,stop.Token);if(invite is not null)window.ReceiveDiscordInvite(invite);};Application.Run(window);stop.Cancel();try{listener?.GetAwaiter().GetResult();}catch(OperationCanceledException){}}
+    [STAThread] static void Main(string[] args){ApplicationConfiguration.Initialize();if(args.Contains("--selftest")){LauncherChecks.Run();RomChecks.Run();ControlBindings.SelfTest();ResetKeys.SelfTest();NativeMultiplayerConfig.SelfTest();File.WriteAllText(Path.Combine(AppContext.BaseDirectory,"rom-selftest.json"),"{\"passed\":true,\"checks\":[\"FNT/FAT extraction\",\"out of bounds rejection\",\"unsafe path rejection\"]}");return;}using var mutex=new Mutex(true,"Local\\PlatinumPrivateLauncher-"+Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(AppContext.BaseDirectory)))[..20],out var first);var invite=DiscordLaunch.Secret(args);if(!first){try{DiscordLaunch.Forward(invite).GetAwaiter().GetResult();}catch{MessageBox.Show("The existing launcher did not respond. Bring it to the front and try the invite again.");}return;}using var window=new Launcher();using var stop=new CancellationTokenSource();Task? listener=null;window.Shown+=(_,_)=>{listener=DiscordLaunch.Listen(window,stop.Token);if(invite is not null)window.ReceiveDiscordInvite(invite);};Application.Run(window);stop.Cancel();try{listener?.GetAwaiter().GetResult();}catch(OperationCanceledException){}}
 }
 sealed partial class Launcher:Form
 {
@@ -92,7 +92,16 @@ sealed partial class Launcher:Form
         using var profile=JsonDocument.Parse(await File.ReadAllTextAsync(Profile));var p=profile.RootElement;
         var credentials=JsonSerializer.SerializeToUtf8Bytes(new{schema=1,hub=Url,seed=p.GetProperty("seed").GetString(),token=p.GetProperty("token").GetString(),refresh_token=p.GetProperty("refresh_token").GetString(),name=p.GetProperty("display_name").GetString(),named=true});
         var appdata=Path.Combine(Client,"AppData");var auth=Path.Combine(appdata,"PlatinumTogether");Directory.CreateDirectory(auth);File.WriteAllBytes(Path.Combine(auth,"online-sign-in.dat"),LocalSeal.Protect(credentials));
-        File.WriteAllText(Path.Combine(GameDir,"multiplayer.ini"),$"hub_url {Url}\nhub_key {p.GetProperty("hub_key").GetString()}\nlast solo\n");
+        var networkConfig=Path.Combine(GameDir,"multiplayer.ini");
+        if(File.Exists(networkConfig)&&new FileInfo(networkConfig).Length>1048576)throw new IOException("Native multiplayer settings are unexpectedly large.");
+        var networkBefore=File.Exists(networkConfig)?await File.ReadAllBytesAsync(networkConfig):[];
+        var networkUpdated=NativeMultiplayerConfig.Update(networkBefore,Url,p.GetProperty("hub_key").GetString()!);
+        var networkStage=networkConfig+".launcher-"+Guid.NewGuid().ToString("N")+".tmp";
+        try{
+            await File.WriteAllBytesAsync(networkStage,networkUpdated);
+            if(GameRunning()||!(File.Exists(networkConfig)?await File.ReadAllBytesAsync(networkConfig):[]).SequenceEqual(networkBefore))throw new IOException("Native game/settings changed while preparing the launch; existing settings were retained.");
+            File.Move(networkStage,networkConfig,true);
+        }finally{if(File.Exists(networkStage))File.Delete(networkStage);}
         await GameSafety.CheckFile(Path.Combine(GameDir,"Platinum.exe"));
         var info=new ProcessStartInfo(Path.Combine(GameDir,"Platinum.exe")){WorkingDirectory=GameDir,UseShellExecute=false};info.Environment["LOCALAPPDATA"]=appdata;game=Process.Start(info);Volatile.Write(ref discordState,"Playing a private world");if(game is not null){game.EnableRaisingEvents=true;game.Exited+=(_,_)=>Volatile.Write(ref discordState,"In the launcher");}Log("Private game launched");
     }
