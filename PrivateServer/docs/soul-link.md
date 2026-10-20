@@ -6,6 +6,15 @@ a `soulLink` option to hosting configuration, or select a custom world server to
 start it. The relay carries authenticated peer traffic; native game rules apply
 the encounter pairing, linked losses and partner logs.
 
+## Native 0.1.7 startup route
+
+Use **Host my world → New world → Challenge Run → Custom Challenge → Soul Link
+→ Invite friends**. The primary Invite friends action is present in the 0.1.7
+native frontend and switches creation into co-op context. The old disabled rule
+editor path is not the same action. This is a read-only implementation finding,
+not a two-player completion claim. Use the combined co-op relay, not a custom
+persistent-world server. The acceptance checks below remain required.
+
 ## Release checks still in progress
 
 The following must pass with separate native clients and disposable saves before

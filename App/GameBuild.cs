@@ -6,6 +6,8 @@ internal static class GameBuild
     public const string Hash017="3688D6B1C5B762B9A1F8D74B64F3A6A62D4B07D525074A94B432E4B0B2866EC9";
     // Native launch compatibility is separate from the older save/memory adapters.
     public static bool NativeClientSupported(string hash)=>string.Equals(hash,Hash015,StringComparison.OrdinalIgnoreCase)||string.Equals(hash,Hash017,StringComparison.OrdinalIgnoreCase);
+    // Independently audited gift schema/callbacks; do not inherit future launch builds.
+    public static bool GiftSaveSupported(string hash)=>string.Equals(hash,Hash015,StringComparison.OrdinalIgnoreCase)||string.Equals(hash,Hash017,StringComparison.OrdinalIgnoreCase);
     public static bool Supported(string hash)=>hash==Hash015||hash==Hash016;
     public static int Rva016(int old)=>old switch
     {

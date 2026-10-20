@@ -1,6 +1,6 @@
 # Official 0.1.7 compatibility
 
-The dev10 launcher accepts the complete, locally supplied official 0.1.7 native
+The dev11 launcher accepts the complete, locally supplied official 0.1.7 native
 client. It does not distribute the game or port old memory offsets into the new
 executable. Keep all matching official assets together; do not replace only
 `Platinum.exe` in an old private game.
@@ -71,16 +71,25 @@ for 0.1.7, add absent species, prove game legality or validate native capture.
 ## Upgrade and limits
 
 Follow [Quick start](quick-start.md) to update the original game officially,
-back up the private client and prepare it again with the dev10 launcher. Existing
+back up the private client and prepare it again with the dev11 launcher. Existing
 private saves/profiles are retained; native code owns any supported save handling.
 
-Custom Poké Mart gift loading uses a separate save adapter. It is enabled for
-verified 0.1.5 only; 0.1.7 native play support does not enable that adapter or the
-legacy injected trainer. Pending delivery journals and backups must be preserved.
-Native MAIL uses the game's own route.
+Custom Poké Mart gift loading uses a separately audited save adapter, enabled
+for exact verified 0.1.5 and 0.1.7 builds. All 38 native save descriptor sizes
+match; the gift offset (46292), data/block sizes (4904/4912), CRC placement,
+8-slot payload layout, accepted active-generation selection and Pokémon/egg/item
+callback structure agree. The adapter conservatively refuses recovery states
+that the native game can sometimes repair. Copied-save testing passed 68 builds,
+96 PK4 decode checks, 12 capacity fills and 11 refusal checks. Source saves were
+unchanged. Those copies originated in 0.1.5, so ordinary 0.1.7 deliveryman
+collection and expanded-species registration remain separate pending tests.
+Backups, user confirmation, closed-game checks and claim journals still apply.
+The legacy injected trainer is not enabled for 0.1.7. Native MAIL uses its own route.
 
-The known Soul Link creation-context gate is still present in the inspected
-0.1.7 code. Fresh two-peer Soul Link startup, arbitrary-FPS native gameplay,
+The 0.1.7 frontend supplies a new **Invite friends** action after selecting
+Soul Link. It deliberately switches creation into co-op context through the
+native initializer; use the primary action rather than the secondary custom-rule
+editor. Fresh two-peer Soul Link startup, arbitrary-FPS native gameplay,
 unattended world simulation and native map/story integration remain unfinished.
 See [verification status](status.md), [Soul Link](soul-link.md) and
 [timing/movement](timing-and-movement.md).

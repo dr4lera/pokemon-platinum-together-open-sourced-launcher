@@ -67,6 +67,8 @@ sealed partial class Launcher:Form
         foreach(var entry in doc.RootElement.GetProperty("OwnedFiles").EnumerateObject())if(Path.GetFileName(entry.Name).Equals("Platinum.exe",StringComparison.OrdinalIgnoreCase))GameSafety.CheckHash(entry.Value.GetString()!);
         await GameSafety.CheckFile(Path.Combine(src,"Platinum.exe"));var packaged=doc.RootElement.GetProperty("OwnedFiles").EnumerateObject().Select(x=>(x.Name,x.Value.GetString()!)).ToArray();
         var required=doc.RootElement.GetProperty("RequiredFiles").EnumerateObject().Select(x=>(x.Name,x.Value.GetString()!)).ToArray();var files=packaged.Concat(string.IsNullOrWhiteSpace(rom.Text)?required:[]).DistinctBy(x=>x.Name,StringComparer.OrdinalIgnoreCase).ToArray();
+        Log("Checking all installed assets before replacing the private copy…");await Task.Run(()=>PreparationPreflight.Validate(src,GameDir,files));
+        if(GameRunning())throw new IOException("The private game started during validation. No game assets were replaced.");
         Log("Preparing separate game copy…");await Task.Run(()=>{foreach(var (relative,expected) in files){var from=LauncherChecks.Child(src,relative);var to=LauncherChecks.Child(GameDir,relative);if(!File.Exists(from))throw new IOException("Missing installed asset: "+relative);var bytes=File.ReadAllBytes(from);if(!Convert.ToHexString(SHA256.HashData(bytes)).Equals(expected,StringComparison.OrdinalIgnoreCase))throw new IOException("Installed asset failed validation: "+relative);Directory.CreateDirectory(Path.GetDirectoryName(to)!);File.WriteAllBytes(to,bytes);}});
         if(!string.IsNullOrWhiteSpace(rom.Text))await RomImport.Extract(rom.Text,GameDir,doc.RootElement.GetProperty("RomSha256").GetString()!,packaged.Select(x=>x.Name).ToHashSet(StringComparer.OrdinalIgnoreCase),new Progress<string>(Log));
         foreach(var (relative,expected) in required){var path=LauncherChecks.Child(GameDir,relative);if(!File.Exists(path)||!Convert.ToHexString(SHA256.HashData(await File.ReadAllBytesAsync(path))).Equals(expected,StringComparison.OrdinalIgnoreCase))throw new IOException("Required ROM asset failed validation: "+relative);}
@@ -120,12 +122,12 @@ sealed partial class Launcher:Form
 static class LauncherChecks
 {
     internal static bool Supported(string hash)=>!GameSafety.Blocked(hash)&&PlatinumTrainer.GameBuild.NativeClientSupported(hash);
-    internal static bool SaveAdapterSupported(string hash)=>!GameSafety.Blocked(hash)&&PlatinumTrainer.GameBuild.Supported(hash.ToUpperInvariant());
+    internal static bool SaveAdapterSupported(string hash)=>!GameSafety.Blocked(hash)&&PlatinumTrainer.GameBuild.GiftSaveSupported(hash);
     internal static void NativeBuildPolicyChecks()
     {
         foreach(var hash in new[]{PlatinumTrainer.GameBuild.Hash015,PlatinumTrainer.GameBuild.Hash017})
-            if(!Supported(hash)||!Supported(hash.ToLowerInvariant()))throw new Exception("Verified native client rejected.");
-        if(!SaveAdapterSupported(PlatinumTrainer.GameBuild.Hash015)||SaveAdapterSupported(PlatinumTrainer.GameBuild.Hash017)||PlatinumTrainer.GameBuild.Supported(PlatinumTrainer.GameBuild.Hash017))throw new Exception("Native launch and legacy save adapters were not kept separate.");
+            if(!Supported(hash)||!Supported(hash.ToLowerInvariant())||!SaveAdapterSupported(hash)||!SaveAdapterSupported(hash.ToLowerInvariant()))throw new Exception("Verified native client/gift adapter rejected.");
+        if(PlatinumTrainer.GameBuild.Supported(PlatinumTrainer.GameBuild.Hash017))throw new Exception("Gift support enabled the old memory/save profile.");
         if(Supported(new string('0',64))||SaveAdapterSupported(new string('0',64))||Supported(GameSafety.QuarantinedHash)||SaveAdapterSupported(GameSafety.QuarantinedHash))throw new Exception("Unknown or quarantined build accepted.");
     }
     internal const string Hash="27075fceb04b5a3140e707bae1b12d69e04824b86e960121f566ad5418728488";

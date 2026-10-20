@@ -10,7 +10,7 @@ sealed partial class Launcher
     void GiftPage(FlowLayoutPanel card)
     {
         card.Controls.Add(giftInbox);Add(card,"Refresh my gifts",RefreshGifts);Add(card,"Load selected gift for the Poké Mart deliveryman",ClaimGift);
-        card.Controls.Add(new Label{Text="On verified 0.1.5, custom Pokémon, eggs and items can be loaded into the gift queue while your private game is closed, then collected from a Poké Mart deliveryman (up to 8 waiting). This save adapter is not yet verified for 0.1.7. Native MAIL/SUPPLIES gifts use the game's MAIL screen.",Width=790,Height=115,ForeColor=muted});
+        card.Controls.Add(new Label{Text="On verified 0.1.5 and 0.1.7, custom Pokémon, eggs and items can be loaded into the gift queue while your private game is closed, then collected from a Poké Mart deliveryman (up to 8 waiting). The save is checked and backed up first. Native MAIL/SUPPLIES gifts use the game's MAIL screen.",Width=790,Height=115,ForeColor=muted});
     }
     async Task RefreshGifts(){await StartServer();var path=Path.Combine(Data,"gift-inbox-cache.json");await Command("inbox","--profile",Profile,"--action","list","--out",path);using var data=JsonDocument.Parse(await File.ReadAllTextAsync(path));giftInbox.Items.Clear();foreach(var g in data.RootElement.GetProperty("gifts").EnumerateArray())giftInbox.Items.Add(new InboxGift(g.GetProperty("id").GetString()!,g.GetProperty("title").GetString()!,g.GetProperty("data").GetString()!));Log($"{giftInbox.Items.Count} custom gift(s) waiting");}
     async Task ClaimGift()

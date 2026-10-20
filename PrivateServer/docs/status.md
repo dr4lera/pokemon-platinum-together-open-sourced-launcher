@@ -2,7 +2,32 @@
 
 This document is a release gate, not a promise that every requested feature is done.
 
-## 0.1.7 compatibility update (2026-10-20)
+## Current dev11 checks (2026-10-20)
+
+- All 28 backend tests pass, including two-build relay authentication/routing,
+  native 0.1.7 ready-field/limit checks and mismatched-build refusal.
+- Both standalone hosting wrappers pass real Windows startup, role/health and
+  owner-signed shutdown checks. Arguments are strict; `--check` is read-only,
+  missing configs fail clearly, and Node 24.12+ is enforced. Windows/Linux CI is
+  configured separately; see each repository's Actions result for executed scope.
+- Map Studio can select authoring targets 0.1.5/0.1.6/0.1.7 in Pack details;
+  export/import preserves each target. Native installation remains unavailable.
+- Launcher preflights the complete copied asset set before replacing files. An
+  actual preparation test rejected a late corrupt source asset without replacing
+  earlier files. Repair preserves save, identity and binding canaries.
+- The separately audited 0.1.7 gift save adapter is enabled. Native collection,
+  capture/Dex/storage/reload and two-player connection-status tests remain pending.
+- Native title rendering was visually observed in a focused isolated 0.1.7
+  window. Input guards detected human activity; further gameplay testing waits
+  for an uninterrupted private test window.
+- A supported native 0.1.7 Soul Link **Invite friends** route was identified;
+  it has not yet passed the two-client acceptance sequence.
+- The 0.1.7 retail player explicitly reports authoring unavailable and rejects
+  Studio import entrypoints. No supported unattended headless world runtime was
+  identified. Custom map/story execution and permanent native simulation are
+  implementation gaps, not features of the Node storage service.
+
+## Dev10 compatibility checks (historical)
 
 The launcher now accepts the verified official 0.1.7 executable for native play
 and preparation, separately from the older save/memory adapters. The release
@@ -25,8 +50,9 @@ therefore title/start evidence comes from the current native log, not a screensh
 
 The existing managed builder passed 2,400 starter constraint combinations and
 4,800 encrypted PK4 round trips. This does not validate an old injected trainer
-against 0.1.7. Custom Poké Mart save delivery remains restricted to verified
-0.1.5. No native Soul Link fix is established by this update. See
+against 0.1.7. Dev10 restricted custom Poké Mart delivery to 0.1.5; dev11
+separately audits and enables its 0.1.7 format as described above. No two-player
+Soul Link pass is established by these checks. See
 [build details, starter behavior and test limits](native-017.md).
 
 | Component | Evidence | Still required |
