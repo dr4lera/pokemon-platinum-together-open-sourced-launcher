@@ -41,8 +41,10 @@ installation or mutable player data. See [development](PrivateServer/docs/develo
 
 ## Current limits
 
-Native two-player joining, unattended world simulation, all game modes and native
-custom map/sprite loading remain unfinished. Backend tests and editor previews do
+Manual local relay joining is verified with two unmodified 0.1.5 clients through
+Menu → Party → Join World after joining the party code. Automatic shortcut
+handoff, Soul Link startup, independent cross-map travel, frame-rate independence,
+unattended world simulation and native custom map/sprite loading remain unfinished. Backend tests and editor previews do
 not establish those features. See the linked status page before deploying.
 
 ## Credits and license

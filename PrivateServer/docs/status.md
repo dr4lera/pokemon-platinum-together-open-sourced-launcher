@@ -16,12 +16,17 @@ This document is a release gate, not a promise that every requested feature is d
 | Map Studio | Editor, project/pack round trips, integrity/path rejection | Native loading, assets and rendering fixes |
 | Modes | Truthful capability table | Adventures, runs, trading, guilds, PvP and other missing routes |
 
-The isolated native runtime loads and saves a disposable world with normal game
-file integrity checks retained. A real guest now joins a party by code and requests
-a world; the native host authenticates to the relay. An isolated guest loaded its local world, authenticated to the same relay and
-replicated northward movement visibly on an uninstrumented host. Normal Join-code
-handoff, remote play, recovery and persistent worker lifecycle remain unverified.
-The research helper is not a shipped dedicated server and is excluded from builds.
+Earlier research demonstrated movement using an experimental runtime helper.
+That helper is retired and excluded from releases; it is not proof of ordinary
+client usability. On 2026-10-19, two ordinary, unmodified 0.1.5 lab clients
+authenticated, joined a party by the native code UI, then entered the same world
+through **Menu → Party → Join World**. Both clients displayed the peer. This was
+repeated after a clean backend restart without the discarded unsolicited
+allocation hook. See [the tested manual sequence](players.md#manual-relay-joining-in-015).
+The combined backend now advertises that manual relay capability. Separate
+Inverna/world deployments do not advertise it. Native shortcut handoff, Soul Link
+startup, independent cross-map travel, remote gameplay, frame-rate independence
+and persistent worker lifecycle remain unfinished.
 
 Custom-world scope also includes owner-editable story definitions (dialogue,
 quests, conditions, NPC behavior, progression and encounters), versioned alongside
@@ -91,3 +96,19 @@ same blocked hash listed above. Before quarantine, the lab copy matched it.
 This establishes release provenance, not that the executable is harmless.
 No independently confirmed false-positive resolution was found, and no file
 was restored, excluded, re-downloaded or renamed to evade the detection.
+
+
+## Ordinary native relay entry and private sign-in correction
+
+The native code screen accepts party membership but does not create the guest's
+pending world request. The existing native Party menu does. Local testing observed
+both clients authenticate and display one another using that menu, then repeated
+the sequence after restarting the backend. Native integrity checks remained
+active; no process writes, injection or game binary changes were used.
+
+Launcher sign-in now updates both private native credential locations, with
+staging, previous-file preservation, running-game/concurrent-change guards and
+path-link rejection. The launcher build and self-tests passed. All 27 backend,
+configuration and transport timing tests passed with loopback network access.
+The regression test explicitly refuses unsolicited allocation on party-code join.
+The complete rework is still unfinished.

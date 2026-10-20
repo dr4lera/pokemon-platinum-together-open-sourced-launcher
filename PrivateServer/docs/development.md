@@ -10,7 +10,7 @@ From the source root:
 dotnet build PrivateServer/Launcher/Launcher.csproj -c Release
 dotnet build PrivateServer/MailSender/MailSender.csproj -c Release
 dotnet build MapStudio/MapStudio.csproj -c Release
-node --test PrivateServer/Server/test/backend.test.mjs PrivateServer/Server/test/config.test.mjs
+node --test PrivateServer/Server/test/*.test.mjs
 ```
 
 Published GUIs accept `--selftest`. Run local integration tests with loopback

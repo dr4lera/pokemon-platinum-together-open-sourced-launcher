@@ -18,9 +18,9 @@ error; check with the owner before replacing trust or restoring old credentials.
 The backend supports friend requests, acceptance/rejection/removal, presence,
 private party invitations, four-player party capacity, leader changes and relay
 allocation. Invitations require acceptance. Server tests exercise these flows
-with real local HTTP/WebSocket clients. The complete native menu-to-world-join
-flow is still pending, so do not assume a successful party invitation proves that
-co-op world synchronization works.
+with real local HTTP/WebSocket clients. Ordinary, unmodified 0.1.5 lab clients have completed the manual
+relay entry path below, including after a backend restart. Automatic shortcut
+handoff, remote gameplay, cross-map travel and recovery still need testing.
 
 The game-mode page reports available implementation rather than unlocking every
 button. Adventures/Rifts, guilds, trading, public PvP and other unsupported modes
@@ -62,3 +62,31 @@ inhibit it). A sent chord is not confirmation that the game reset. Save before
 an encounter if you want to return to it. Resetting does not guarantee a shiny.
 Default/remapped-key and duplicate-binding checks pass; in-game behavior in
 Together remains to be verified with a trusted client and native UI access.
+
+
+## Manual relay joining in 0.1.5
+
+Use the combined backend for co-op relay, separate from persistent-world and
+Inverna deployment roles. Both players need private names on the same backend
+and compatible native builds.
+
+1. The host opens their world with **Host my world → Use Relay**.
+2. The guest loads their own world, opens **Friends → Join code**, enters the
+   host's code and selects **Join**. This joins the party.
+3. The guest opens **Menu → Party → Join World**. This sends the native world
+   request and enters the host's world over the relay.
+
+The shortcut's “Joining your friend's world” message is insufficient on its own.
+The ordinary 0.1.5 shortcut does not create a pending world request. Do not send
+an invented request ID from the server to compensate: the guest rejects it.
+An actual **Join World** request preserves native correlation and host admission
+checks. This sequence passed twice locally, including a clean backend restart
+without an experimental allocation hook or process-memory modification. It does
+not establish Soul Link startup or independent cross-map travel.
+
+The launcher writes its DPAPI-protected private sign-in to both native locations
+inside `Client`: `Game/online-sign-in.dat` and
+`AppData/PlatinumTogether/online-sign-in.dat`. It stages both updates, refuses a
+running game/concurrent file change, rejects linked paths and retains the previous
+protected file as `.previous`. It does not import the original game's account.
+Treat these files and backups as private; never include them in a release.
