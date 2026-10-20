@@ -19,8 +19,10 @@ community friend codes are available. See [verification status](PrivateServer/do
 
 The current launcher still runs a separately prepared game supplied by the player.
 The [source-client migration](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-client)
-is a separate public project. Its own cap, traded-OT and capture rules are implemented;
-full Together gameplay/network/content parity is unfinished. See [the distinction
+is a separate public project. Its cap, traded-OT and capture rules, native
+account/party interface and signed WM transport are implemented. The own-client
+transport fixtures pass against the real backend; two-game battle/trade acceptance
+and full Together gameplay/content parity remain unfinished. See [the distinction
 and inspected native rules](PrivateServer/docs/native-gameplay-rules.md).
 Gameplay-client releases remain paused during this migration; server tools have
 their own dev12 previews below.
