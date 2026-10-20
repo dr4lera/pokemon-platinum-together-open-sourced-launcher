@@ -3,7 +3,7 @@
 ## Requirements
 
 - Windows x64 for the launcher, editor and mail sender.
-- A locally installed, supported Platinum Together game: verified 0.1.5 or 0.1.6.
+- A locally installed, supported Platinum Together game: verified 0.1.5 or 0.1.7.
 - Your own Pokémon Platinum ROM if you want fresh extraction. An already extracted,
   validated installation can also supply the required assets.
 - A complete toolset folder. Moving only the launcher EXE breaks its sibling paths.
@@ -20,6 +20,14 @@
 
 The separate game lives in `Client/Game`. The original installation remains separate.
 Do not share `Client`, `Data`, `Profiles`, `OwnerKeys`, account backups or saves.
+
+To adopt the official 0.1.7 update, first update your original installation with
+the official launcher. Save and close the private game, then run **Extract &
+prepare private game** again in this launcher. This validates and replaces the
+owned game assets while preserving the private save and profile. Back up your
+private `Client` folder first. Updating our launcher alone does not update a
+previously prepared game. Read [0.1.7 compatibility](native-017.md) for the exact
+build and remaining adapter restrictions. The quarantined 0.1.6 build stays blocked.
 
 ## Before inviting friends
 

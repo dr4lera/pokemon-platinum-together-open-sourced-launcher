@@ -16,6 +16,6 @@ static class GameSafety
         await using var file = File.OpenRead(path);
         var hash = Convert.ToHexString(await SHA256.HashDataAsync(file));
         CheckHash(hash);
-        if (!LauncherChecks.Supported(hash)) throw new IOException("This executable has no matching supported game adapter.");
+        if (!LauncherChecks.Supported(hash)) throw new IOException("This executable is not a verified supported native game build.");
     }
 }

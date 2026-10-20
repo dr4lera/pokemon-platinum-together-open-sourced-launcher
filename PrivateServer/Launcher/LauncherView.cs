@@ -11,7 +11,7 @@ sealed partial class Launcher
         var sidebar=new Panel{Dock=DockStyle.Left,Width=148,BackColor=Color.FromArgb(14,27,39),Padding=new Padding(10)};
         var mark=new PictureBox{Location=new(49,22),Size=new(48,48),Image=Icon?.ToBitmap(),SizeMode=PictureBoxSizeMode.Zoom};sidebar.Controls.Add(mark);
         var nav=new FlowLayoutPanel{Location=new(10,100),Width=134,Height=560,AutoScroll=true,FlowDirection=FlowDirection.TopDown,WrapContents=false};sidebar.Controls.Add(nav);
-        var footer=new Label{Text="PRIVATE WORLDS\n0.1.5 / 0.1.6",Dock=DockStyle.Bottom,Height=60,Font=new Font("Segoe UI",8),ForeColor=muted,Padding=new Padding(4,10,0,0)};sidebar.Controls.Add(footer);sidebar.Resize+=(_,_)=>nav.Height=Math.Max(Px(300),sidebar.Height-Px(180));
+        var footer=new Label{Text="PRIVATE WORLDS\n0.1.5 / 0.1.7",Dock=DockStyle.Bottom,Height=60,Font=new Font("Segoe UI",8),ForeColor=muted,Padding=new Padding(4,10,0,0)};sidebar.Controls.Add(footer);sidebar.Resize+=(_,_)=>nav.Height=Math.Max(Px(300),sidebar.Height-Px(180));
         var main=new Panel{Dock=DockStyle.Fill};Controls.Add(main);Controls.Add(sidebar);
         var top=new Panel{Dock=DockStyle.Top,Height=56,BackColor=Color.FromArgb(17,35,48)};main.Controls.Add(top);
         top.Controls.Add(new Label{Text="PLATINUM TOGETHER",AutoSize=true,Location=new(26,19),Font=new Font("Segoe UI Semibold",9),ForeColor=muted});

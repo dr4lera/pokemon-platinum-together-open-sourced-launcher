@@ -2,6 +2,33 @@
 
 This document is a release gate, not a promise that every requested feature is done.
 
+## 0.1.7 compatibility update (2026-10-20)
+
+The launcher now accepts the verified official 0.1.7 executable for native play
+and preparation, separately from the older save/memory adapters. The release
+signature, cached package and installed executable hashes were checked; the
+ordinary isolated client reached its title/start menu with native integrity
+checks active. Defender's custom executable scan completed without a detection.
+That scan is not a security certification. The quarantined 0.1.6 hash remains blocked.
+
+The actual launcher preparation method also passed against the installed 0.1.7:
+2,819 asset entries validated, cached native release envelopes copied, and no
+original saves/worlds/credentials imported. A second preparation preserved
+private save, credential and control-binding canaries byte-for-byte.
+
+The 0.1.7 native client carries the revised connection-status UI, modern-catch
+code and its regression guard, current patches/translations and native pacing.
+Our relay's ready-message limits fit its parser. Full ordinary capture/Dex/save
+and two-player 0.1.7 online-badge tests remain pending. Automated window capture
+returned black frames/timeouts for both the original and isolated 0.1.7 client;
+therefore title/start evidence comes from the current native log, not a screenshot.
+
+The existing managed builder passed 2,400 starter constraint combinations and
+4,800 encrypted PK4 round trips. This does not validate an old injected trainer
+against 0.1.7. Custom Poké Mart save delivery remains restricted to verified
+0.1.5. No native Soul Link fix is established by this update. See
+[build details, starter behavior and test limits](native-017.md).
+
 | Component | Evidence | Still required |
 |---|---|---|
 | Launcher | Builds; UI/DPI checks; private preparation reaches native welcome | Fresh user setup with actual ROM extraction |

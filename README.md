@@ -6,7 +6,7 @@ own supported game and ROM. No game assets, ROMs, saves or account keys are incl
 
 ## Downloads
 
-**[Download the full Windows bundle — dev9 preview](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/releases/download/v0.1.0-dev.9/PokemonPlatinumTogetherOpenSourced-Windows-x64-dev9.zip)**
+**[Download the full Windows bundle — dev10 preview](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/releases/download/v0.1.0-dev.10/PokemonPlatinumTogetherOpenSourced-Windows-x64-dev10.zip)**
 
 Extract the complete ZIP and open `Launcher/PlatinumPrivateLauncher.exe`. Keep
 the folder together. MailSender, Map Studio, the backend and Windows runtimes
@@ -14,14 +14,15 @@ are included. Read the [quick start](PrivateServer/docs/quick-start.md) first.
 
 | Component | Download page | Setup |
 |---|---|---|
-| Launcher and full Windows bundle | [dev9 release and checksum](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/releases/tag/v0.1.0-dev.9) | [Install and play](PrivateServer/docs/quick-start.md) |
+| Launcher and full Windows bundle | [dev10 release and checksum](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/releases/tag/v0.1.0-dev.10) | [Install and play](PrivateServer/docs/quick-start.md) |
 | Shared server / relay | [Server release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-server/releases/tag/v0.1.0-dev.9) | [Hosting guide](PrivateServer/docs/server-hosting.md) |
 | Standalone Windows editors | [Editors release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors/releases/tag/v0.1.0-dev.9) | [Map and sprite tools](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors#download) |
 | Separate Inverna hosting | [Inverna release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-inverna-server/releases/tag/v0.1.0-dev.9) | [Inverna setup](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-inverna-server#first-run) |
 | Separate world backend hosting | [World release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-world-server/releases/tag/v0.1.0-dev.9) | [World setup](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-world-server#first-run) |
 
-Each repository's **Latest release** points to its public dev9 **development
-preview**. Each release includes a SHA-256 checksum file and documents its tested
+The launcher bundle is dev10; the unchanged server/editor/hosting components
+retain their dev9 releases. These are **development previews**. Each release
+includes a SHA-256 checksum file and documents its tested
 scope and unfinished native features. The Latest label identifies the current
 download; it does not establish completion of the native gameplay rework.
 
@@ -33,7 +34,8 @@ download; it does not establish completion of the native gameplay rework.
 
 ## Start here
 
-- [Windows portable development preview](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/releases/tag/v0.1.0-dev.9)
+- [Windows portable development preview](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/releases/tag/v0.1.0-dev.10)
+- [Official 0.1.7 compatibility and starter checks](PrivateServer/docs/native-017.md)
 - [Full documentation](PrivateServer/docs/README.md)
 - [Install and play](PrivateServer/docs/quick-start.md)
 - [Host a server, LAN and Internet relay](PrivateServer/docs/server-hosting.md)
@@ -62,6 +64,12 @@ The build script creates a new portable folder and never replaces a running
 installation or mutable player data. See [development](PrivateServer/docs/development.md).
 
 ## Current limits
+
+Dev10 adds preparation and native launch for the verified official 0.1.7 build,
+carrying its current native code and matching assets. Update your locally
+supplied game with the official launcher, then prepare the private copy again.
+The 0.1.7 gift save adapter and legacy injected trainer remain disabled pending
+verification. See [0.1.7 evidence and limits](PrivateServer/docs/native-017.md).
 
 Manual local relay joining is verified with two unmodified 0.1.5 clients through
 Menu → Party → Join World after joining the party code. A guest also crossed

@@ -19,6 +19,11 @@ the owner's key. A compromised owner Windows account remains able to use it.
 
 ## Receive a custom Pokémon, egg or Poké Mart item
 
+This save-writing adapter is enabled for verified 0.1.5 only. Native 0.1.7 play
+is supported separately; its custom save delivery remains disabled pending
+verification. Refreshing the inbox and owner publication do not establish that
+the recipient's game can collect an attachment. See [0.1.7 limits](native-017.md).
+
 1. In the private launcher, open **Gift inbox**.
 2. Close your private game normally.
 3. Choose the gift and the intended private world's `save.bin`.

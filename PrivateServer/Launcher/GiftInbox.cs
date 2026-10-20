@@ -10,14 +10,14 @@ sealed partial class Launcher
     void GiftPage(FlowLayoutPanel card)
     {
         card.Controls.Add(giftInbox);Add(card,"Refresh my gifts",RefreshGifts);Add(card,"Load selected gift for the Poké Mart deliveryman",ClaimGift);
-        card.Controls.Add(new Label{Text="Custom Pokémon, eggs and items are loaded into the native gift queue while your private game is closed. Then speak to the deliveryman inside a Poké Mart. Up to 8 gifts can wait there. Native MAIL/SUPPLIES gifts are claimed inside the game's MAIL screen.",Width=790,Height=115,ForeColor=muted});
+        card.Controls.Add(new Label{Text="On verified 0.1.5, custom Pokémon, eggs and items can be loaded into the gift queue while your private game is closed, then collected from a Poké Mart deliveryman (up to 8 waiting). This save adapter is not yet verified for 0.1.7. Native MAIL/SUPPLIES gifts use the game's MAIL screen.",Width=790,Height=115,ForeColor=muted});
     }
     async Task RefreshGifts(){await StartServer();var path=Path.Combine(Data,"gift-inbox-cache.json");await Command("inbox","--profile",Profile,"--action","list","--out",path);using var data=JsonDocument.Parse(await File.ReadAllTextAsync(path));giftInbox.Items.Clear();foreach(var g in data.RootElement.GetProperty("gifts").EnumerateArray())giftInbox.Items.Add(new InboxGift(g.GetProperty("id").GetString()!,g.GetProperty("title").GetString()!,g.GetProperty("data").GetString()!));Log($"{giftInbox.Items.Count} custom gift(s) waiting");}
     async Task ClaimGift()
     {
         if(GameRunning())throw new Exception("Save and close the private game before loading a gift.");if(giftInbox.SelectedItem is not InboxGift gift)throw new Exception("Refresh and select a gift first.");
         if(!Guid.TryParseExact(gift.Id,"D",out _))throw new Exception("Invalid gift identifier.");
-        var exe=Path.Combine(GameDir,"Platinum.exe");if(!File.Exists(exe)||!LauncherChecks.Supported(Convert.ToHexString(SHA256.HashData(await File.ReadAllBytesAsync(exe)))))throw new Exception("The private game needs a verified adapter before gifts can be loaded.");
+        var exe=Path.Combine(GameDir,"Platinum.exe");if(!File.Exists(exe)||!LauncherChecks.SaveAdapterSupported(Convert.ToHexString(SHA256.HashData(await File.ReadAllBytesAsync(exe)))))throw new Exception("Custom Poké Mart gift delivery has not been verified for this game build. You can still play; no gift or save was changed.");
         using var choose=new OpenFileDialog{InitialDirectory=GameDir,Filter="Private world save|save.bin",Title="Choose the private world that should receive this gift",FileName=Path.Combine(GameDir,"save.bin")};if(choose.ShowDialog(this)!=DialogResult.OK)return;
         var save=Path.GetFullPath(choose.FileName);var prefix=Path.GetFullPath(GameDir)+Path.DirectorySeparatorChar;if(!save.StartsWith(prefix,StringComparison.OrdinalIgnoreCase)||Path.GetFileName(save)!="save.bin")throw new Exception("Choose a save.bin inside this private game's folder.");
         for(var directory=new DirectoryInfo(Path.GetDirectoryName(save)!);directory!=null;directory=directory.Parent){if((directory.Attributes&FileAttributes.ReparsePoint)!=0)throw new Exception("Choose a save in a real folder, outside directory links.");if(directory.FullName.Equals(Path.GetFullPath(GameDir),StringComparison.OrdinalIgnoreCase))break;}

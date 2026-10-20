@@ -2,6 +2,7 @@
 
 Start with [Quick start](quick-start.md), then [Server hosting](server-hosting.md).
 
+- [Official 0.1.7 compatibility, update steps and starter checks](native-017.md)
 - [Joining, names, friends and invites](players.md)
 - [Mail, Pokémon, eggs and items](mail-and-gifts.md)
 - [Maps and content packs](maps.md)
