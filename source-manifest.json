@@ -212,7 +212,7 @@
   {
     "path": "PrivateServer/Server",
     "type": "git-submodule",
-    "commit": "dd3c3b3f53e1e2f669e69634ec6bfe6577c621bb"
+    "commit": "b6adebde3f23bc55612f49d9f6a64488078aadb0"
   },
   {
     "path": "PrivateServer/Shared/MartGift.cs",
@@ -307,7 +307,7 @@
   {
     "path": "PrivateServer/docs/status.md",
     "type": "file",
-    "sha256": "43ecc77b66a36c2eca3d71983bbc59ef6290abe5917c07be2201fbfc461009a7"
+    "sha256": "30f18b52af0426c42eebe43f78eb087f41340fc576e9c13be6faa2e6cee600b2"
   },
   {
     "path": "PrivateServer/docs/timing-and-movement.md",
@@ -327,7 +327,7 @@
   {
     "path": "README.md",
     "type": "file",
-    "sha256": "765747addd10a0ebf272d77bb4c3f57149dbdd56895e12560761298d42905fbb"
+    "sha256": "0866aaf275ce46cddaa975c3dfc1ffdd4775814278edab7804b05a8a090670ae"
   },
   {
     "path": "THIRD_PARTY_NOTICES.md",

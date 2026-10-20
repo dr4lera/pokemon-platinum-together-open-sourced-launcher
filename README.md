@@ -21,8 +21,9 @@ The current launcher still runs a separately prepared game supplied by the playe
 The [source-client migration](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-client)
 is a separate public project. Its own cap, traded-OT and capture rules are implemented;
 full Together gameplay/network/content parity is unfinished. See [the distinction
-and inspected native rules](PrivateServer/docs/native-gameplay-rules.md). New
-releases remain paused during this migration.
+and inspected native rules](PrivateServer/docs/native-gameplay-rules.md).
+Gameplay-client releases remain paused during this migration; server tools have
+their own dev12 previews below.
 
 ## Downloads
 
@@ -35,13 +36,13 @@ are included. Read the [quick start](PrivateServer/docs/quick-start.md) first.
 | Component | Download page | Setup |
 |---|---|---|
 | Launcher and full Windows bundle | [dev11 release and checksum](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/releases/tag/v0.1.0-dev.11) | [Install and play](PrivateServer/docs/quick-start.md) |
-| Shared server / relay | [Server release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-server/releases/tag/v0.1.0-dev.11) | [Hosting guide](PrivateServer/docs/server-hosting.md) |
+| Shared server / relay | [dev12 server release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-server/releases/tag/v0.1.0-dev.12) | [Hosting guide](PrivateServer/docs/server-hosting.md) |
 | Standalone Windows editors | [Editors release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors/releases/tag/v0.1.0-dev.11) | [Map and sprite tools](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors#download) |
-| Separate Inverna hosting | [Inverna release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-inverna-server/releases/tag/v0.1.0-dev.11) | [Inverna setup](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-inverna-server#first-run) |
-| Separate world backend hosting | [World release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-world-server/releases/tag/v0.1.0-dev.11) | [World setup](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-world-server#first-run) |
+| Separate Inverna hosting | [dev12 Inverna release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-inverna-server/releases/tag/v0.1.0-dev.12) | [Inverna setup](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-inverna-server#first-run) |
+| Separate world backend hosting | [dev12 world release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-world-server/releases/tag/v0.1.0-dev.12) | [World setup](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-world-server#first-run) |
 
-The last published downloads are dev11 with SHA-256 checksums. Dev12 source
-updates are staged; new release publication is paused during client migration.
+Server downloads are dev12 with SHA-256 checksums. The Windows launcher/editor
+downloads remain dev11 while the independent gameplay client is developed.
 Native gameplay, battling and trading are user-confirmed. Dedicated unattended
 world simulation, public matchmaking and custom map/story execution remain unfinished.
 

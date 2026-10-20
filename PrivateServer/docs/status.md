@@ -1,6 +1,7 @@
 # Verification status — dev12
 
-Dev12 source updates are staged; new release publication is paused during the
+Dev12 server previews publish the tested revision 6 backend and standalone hosting
+profiles. Gameplay-client release publication remains paused during the
 [independent gameplay-client migration](native-gameplay-rules.md). The native
 play evidence below concerns matching prepared reference clients, not the new
 source client. Its EXP/OT/capture rules are implemented separately; full Together
