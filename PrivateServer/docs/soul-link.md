@@ -1,7 +1,8 @@
-# Soul Link: co-op relay mode
+# Soul Link: native co-op
 
-Soul Link belongs to the native co-op game and its relay connection. It is not a
-custom persistent-server mode, Inverna world template or server plugin. Do not add
+Soul Link belongs to the native co-op game, using its peer-to-peer or relay
+connection. It is not a custom persistent-server mode, Inverna world template or
+server plugin. Do not add
 a `soulLink` option to hosting configuration, or select a custom world server to
 start it. The relay carries authenticated peer traffic; native game rules apply
 the encounter pairing, linked losses and partner logs.
@@ -10,19 +11,24 @@ the encounter pairing, linked losses and partner logs.
 
 **Host my world → New world → Challenge Run → Custom Challenge → Soul Link →
 Invite friends** was exercised in an ordinary isolated 0.1.7 client. The enabled
-primary action advances to settings and a **Custom Soul Link** review. This
-removes the old selection blocker; it does not prove a running relay Soul Link.
+primary action advances to settings and a **Custom Soul Link** review. With
+user-assisted navigation, **Lock and start** reached the native hosting/invite
+lobby with those rules locked. A separate clean 0.1.7 client joined through its
+direct-connect code, displayed matching rules, and readied Player 2. The host
+then started both clients into the new-world introduction. The guest's
+introduction explicitly acknowledged the host's Nuzlocke with Soul Link rules.
+This verifies local lobby joining, readiness and coordinated startup; linked gameplay and relay
+startup still need their own checks.
 
 The action selects **FRIENDS: RIGHT AWAY**. The actual settings UI displays a
-peer-to-peer IP warning; the final **Lock and start** action was not accepted in
-this test. Native code also says **Later (safe)** hosting unlocks after the first
+peer-to-peer IP warning, and the observed lobby used that connection mode.
+Native code also says **Later (safe)** hosting unlocks after the first
 Gym badge. Switching that timing preserves Soul Link rules, but it cannot be
 represented as relay hosting from the first route. No supported per-draft relay
-selector has yet been verified. Relay-only Soul Link startup remains unfinished.
+selector has yet been verified. Relay Soul Link startup remains unverified.
 
-Do not silently substitute peer-to-peer hosting for the requested relay mode,
-or confuse it with a custom persistent-world server. The two-client acceptance
-checks below remain required.
+Show which native connection mode is in use; neither is a custom persistent-world
+server. The remaining two-client acceptance checks below are still required.
 
 ## Release checks still in progress
 
@@ -30,7 +36,8 @@ The following must pass with separate native clients and disposable saves before
 this preview advertises working Soul Link:
 
 1. A host selects Soul Link through the existing co-op creation controls.
-2. A second account joins through the party/code flow over the relay.
+2. A second account joins through the party/code flow. Direct local joining
+   passed in 0.1.7; repeat over the relay before advertising relay Soul Link.
 3. Both clients enter with matching Soul Link rules and observe each other.
 4. Each player's encounter log reaches the partner; linked-loss behavior applies
    to the intended pair, including a partner temporarily disconnected.
@@ -45,8 +52,9 @@ this preview advertises working Soul Link:
 Current evidence: the shipped native client includes Soul Link rule selection,
 partner-log exchange and linked-loss handlers. Local native relay movement has
 passed in a different test world, including an Eterna Forest/Route 205 round
-trip. That evidence does **not** yet verify Soul Link startup or linked rules
-across two players. The native code screen joins the party; **Menu > Party >
+trip in 0.1.5. The separate 0.1.7 direct-connect startup check above does not
+establish linked-loss, reconnection or cross-map rule delivery. In 0.1.5 the
+native code screen joins the party; **Menu > Party >
 Join World** is the tested manual world-entry route. Automatic handoff remains
 under investigation. Published updates remain development previews.
 

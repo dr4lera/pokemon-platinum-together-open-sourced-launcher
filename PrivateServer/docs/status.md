@@ -20,10 +20,12 @@ This document is a release gate, not a promise that every requested feature is d
 - Native title rendering and the **ONLINE** badge were visually observed in a
   focused isolated 0.1.7 client signed in as its private test account. This is a
   one-client authenticated-lobby check, not a two-peer relay gameplay pass.
-- The native Soul Link **Invite friends** action was exercised and reached a
-  Custom Soul Link review. It defaults to peer-to-peer **Right away**; native
-  **Later** hosting is badge-gated. The test stopped before final world creation.
-  Relay-only startup and the two-client acceptance sequence remain unverified.
+- The native Soul Link **Invite friends** action was exercised. User-assisted
+  navigation reached a hosting/invite lobby with **Custom Soul Link** rules
+  locked. A separate clean 0.1.7 guest joined by direct-connect code, matched
+  rules and readied Player 2. Host Start advanced both to the introduction.
+  This local peer-to-peer check used **Right away**; native **Later** hosting
+  is badge-gated. Relay startup, linked-loss and reconnection remain unverified.
 - The 0.1.7 retail player explicitly reports authoring unavailable and rejects
   Studio import entrypoints. No supported unattended headless world runtime was
   identified. Custom map/story execution and permanent native simulation are
@@ -79,8 +81,8 @@ through **Menu → Party → Join World**. Both clients displayed the peer. This
 repeated after a clean backend restart without the discarded unsolicited
 allocation hook. See [the tested manual sequence](players.md#manual-relay-joining-in-015).
 The combined backend now advertises that manual relay capability. Separate
-Inverna/world deployments do not advertise it. Native shortcut handoff, Soul Link
-startup, remote gameplay, arbitrary-FPS independence
+Inverna/world deployments do not advertise it. Native shortcut handoff, relay
+Soul Link startup, remote gameplay, arbitrary-FPS independence
 and persistent worker lifecycle remain unfinished.
 
 Custom-world scope also includes owner-editable story definitions (dialogue,
@@ -185,4 +187,6 @@ chord has been removed from the launcher action.
 Map Studio scene effects and sprite previews derive animation time from a
 monotonic stopwatch. Boundary, skipped-frame and 30/60/120/144 callback-rate
 checks passed. This does not establish native game simulation independence.
-Soul Link startup and arbitrary-FPS native simulation remain unfinished.
+Relay Soul Link startup, linked gameplay checks and arbitrary-FPS native
+simulation remain unfinished. Local 0.1.7 direct-connect startup passed as
+described above.

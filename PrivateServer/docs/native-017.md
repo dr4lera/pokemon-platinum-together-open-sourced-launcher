@@ -89,10 +89,13 @@ The legacy injected trainer is not enabled for 0.1.7. Native MAIL uses its own r
 
 The 0.1.7 frontend supplies a new **Invite friends** action after selecting
 Soul Link. It deliberately switches creation into co-op context through the
-native initializer; its selection and review were observed live. However, it
+native initializer; its selection, review and locked hosting/invite lobby were
+observed live with user-assisted navigation. A separate clean 0.1.7 guest
+joined by direct-connect code, readied, and entered the introduction when the
+host started. This establishes local coordinated startup. The route
 defaults to peer-to-peer **Right away**, while native **Later** hosting is locked
-until the first Gym badge. A relay-only start from the first route is not verified.
-Fresh two-peer Soul Link startup, arbitrary-FPS native gameplay,
+until the first Gym badge. A relay start from the first route is not verified.
+Soul Link linked-loss/reconnection and relay startup, arbitrary-FPS native gameplay,
 unattended world simulation and native map/story integration remain unfinished.
 See [verification status](status.md), [Soul Link](soul-link.md) and
 [timing/movement](timing-and-movement.md).
