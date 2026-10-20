@@ -43,3 +43,22 @@ The server records authenticated realm/relay entry; invitations alone do not cou
 Records survive server restart and are visible only to their account. This is a
 connection history, not a claim that native guest simulation is verified. Entry
 and federation between separate Inverna/world deployments remain in development.
+
+
+## Soft reset for encounter hunting
+
+Use **Controls > Soft reset private game** while this launcher's private game is
+running. It sends the native L + R + Start + Select chord using the saved keyboard
+bindings in `sim_config.ini`; unsaved edits in the controls grid are not used.
+Defaults are **Q + E + Enter + Right Shift**, which can also be held directly in
+the game. The control does not kill/restart the process or edit/save Pokemon.
+Only the private game at this launcher's path is eligible. An unknown or blocked
+build, missing window, ambiguous process, held reset key, unsupported binding or
+failure to focus the intended window prevents sending the chord. It releases
+its keys after a short elapsed-time hold, including on failure or focus loss.
+
+The native game decides whether reset is permitted (saving/communication can
+inhibit it). A sent chord is not confirmation that the game reset. Save before
+an encounter if you want to return to it. Resetting does not guarantee a shiny.
+Default/remapped-key and duplicate-binding checks pass; in-game behavior in
+Together remains to be verified with a trusted client and native UI access.
