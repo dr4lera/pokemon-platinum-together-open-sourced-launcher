@@ -12,6 +12,7 @@ own supported game and ROM. No game assets, ROMs, saves or account keys are incl
 
 ## Start here
 
+- [Windows portable development preview](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/releases/tag/v0.1.0-dev.9)
 - [Full documentation](PrivateServer/docs/README.md)
 - [Install and play](PrivateServer/docs/quick-start.md)
 - [Host a server, LAN and Internet relay](PrivateServer/docs/server-hosting.md)
@@ -42,10 +43,13 @@ installation or mutable player data. See [development](PrivateServer/docs/develo
 ## Current limits
 
 Manual local relay joining is verified with two unmodified 0.1.5 clients through
-Menu → Party → Join World after joining the party code. Automatic shortcut
-handoff, Soul Link startup, independent cross-map travel, frame-rate independence,
-unattended world simulation and native custom map/sprite loading remain unfinished. Backend tests and editor previews do
-not establish those features. See the linked status page before deploying.
+Menu → Party → Join World after joining the party code. A guest also crossed
+Eterna Forest → Route 205 and back while the host stayed stationary and both
+remained connected. That verifies the tested route, not every map or story event.
+Automatic shortcut handoff, Soul Link startup, arbitrary-FPS native gameplay,
+unattended world simulation and native custom map/sprite loading remain unfinished.
+Backend tests and editor previews do not establish those features. See the linked
+status page before deploying.
 
 ## Credits and license
 
