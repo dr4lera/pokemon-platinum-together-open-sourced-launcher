@@ -25,7 +25,7 @@ repeated after a clean backend restart without the discarded unsolicited
 allocation hook. See [the tested manual sequence](players.md#manual-relay-joining-in-015).
 The combined backend now advertises that manual relay capability. Separate
 Inverna/world deployments do not advertise it. Native shortcut handoff, Soul Link
-startup, independent cross-map travel, remote gameplay, frame-rate independence
+startup, remote gameplay, arbitrary-FPS independence
 and persistent worker lifecycle remain unfinished.
 
 Custom-world scope also includes owner-editable story definitions (dialogue,
@@ -59,7 +59,7 @@ see [Discord setup and limits](discord.md).
 Soul Link must use native co-op/relay, independently of custom persistent world
 servers. The 0.1.5 relay creation UI currently retains a solo-creation flag and
 shows **Needs a friend** in its Soul Link picker. This is not fixed or verified.
-Independent cross-map exploration and frame-rate independence are release checks;
+Broader cross-map coverage and frame-rate independence are release checks;
 see [Soul Link](soul-link.md) and [timing/movement](timing-and-movement.md).
 
 The isolated 0.1.6 client started with manifest-validated assets and unmodified
@@ -82,8 +82,8 @@ without a new detection recorded.
 
 Backend tests passed (24), Discord IPC checks passed, and gift/save-integrity checks
 passed after this rollback. MailSender builds, but NuGet vulnerability metadata
-was unavailable during restore (NU1900). Native Soul Link startup, cross-map travel
-and frame-rate independence remain unverified. These source updates must not be
+was unavailable during restore (NU1900). Native Soul Link startup and frame-rate
+independence remain unverified. These source updates must not be
 represented as a completed gameplay release.
 
 ### Original-installation detection follow-up
@@ -112,3 +112,22 @@ path-link rejection. The launcher build and self-tests passed. All 27 backend,
 configuration and transport timing tests passed with loopback network access.
 The regression test explicitly refuses unsolicited allocation on party-code join.
 The complete rework is still unfinished.
+
+## Ordinary native travel, reset and editor timing checks (2026-10-20)
+
+Two unmodified 0.1.5 lab clients passed a bounded independent-travel check. The
+guest moved from Eterna Forest to Route 205 and back while the host stayed at
+the same forest coordinates. Both remained connected. A guest wild battle and
+normal flee also left the host stationary and unaffected. This covers that
+route boundary and battle, not every map/story transition or Soul Link event.
+
+The reset action now uses a normal close and restart of only the private client.
+Its native close confirmation remains visible; it is never force-terminated.
+Local testing observed a reopened title screen and unchanged save-file hashes,
+plus a declined-close timeout that left the client alive. The unreliable DS key
+chord has been removed from the launcher action.
+
+Map Studio scene effects and sprite previews derive animation time from a
+monotonic stopwatch. Boundary, skipped-frame and 30/60/120/144 callback-rate
+checks passed. This does not establish native game simulation independence.
+Soul Link startup and arbitrary-FPS native simulation remain unfinished.

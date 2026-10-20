@@ -31,8 +31,8 @@
   },
   {
     "path": "MapStudio",
-    "type": "submodule",
-    "commit": "1678b519338b445df8ec77c17f14fc2d3562e518"
+    "type": "git-submodule",
+    "commit": "cd9e3ee39ffd4f1f0d792977ba3a5a975f329391"
   },
   {
     "path": "PrivateServer/Checks/GiftChecks.csproj",
@@ -77,7 +77,7 @@
   {
     "path": "PrivateServer/Launcher/ControlsView.cs",
     "type": "file",
-    "sha256": "f8cf78cd944b397eb5ef25e4159fda83ab4bc83d7a881b14b681e67157713dcc"
+    "sha256": "b58589f11d1e89dc048bd8c04e64fcc144c4c892bcbc7e0931da91f3a376d9a7"
   },
   {
     "path": "PrivateServer/Launcher/CreatorTools.cs",
@@ -162,7 +162,7 @@
   {
     "path": "PrivateServer/Launcher/Program.cs",
     "type": "file",
-    "sha256": "c09581775c58de5632a9b353008e85c0eef4c700beec259902be2547bcbe1c1e"
+    "sha256": "5c2dc67da9754204d76d9daf51910cab6dc33051af66dc74430ad7174ebfc884"
   },
   {
     "path": "PrivateServer/Launcher/RomChecks.cs",
@@ -177,7 +177,7 @@
   {
     "path": "PrivateServer/Launcher/SoftReset.cs",
     "type": "file",
-    "sha256": "102f979207fbf9816730efc837079e8547e6078af26b82ba9398b0caf0251891"
+    "sha256": "7256a9e39c0ae1f37b799730e42f83afa8ebe5ec96bcdc2c76e11fd9509bc14a"
   },
   {
     "path": "PrivateServer/MailSender/MailSender.csproj",
@@ -196,7 +196,7 @@
   },
   {
     "path": "PrivateServer/Server",
-    "type": "submodule",
+    "type": "git-submodule",
     "commit": "bde660df3495d3451464686fc9406177b86cfeaf"
   },
   {
@@ -252,7 +252,7 @@
   {
     "path": "PrivateServer/docs/players.md",
     "type": "file",
-    "sha256": "486fef1bf2e03267cfb4f69e013e0acf7d365f30019af4af77c85979779b6bed"
+    "sha256": "1c4563791ae6e859b9291d1c86a0a270bdea4517baa21a9040d3664de185b071"
   },
   {
     "path": "PrivateServer/docs/quick-start.md",
@@ -277,12 +277,12 @@
   {
     "path": "PrivateServer/docs/status.md",
     "type": "file",
-    "sha256": "631dfa271b2e1623ae60b58a5ce253bdbfcf0766d42bd163494c036f50b5df60"
+    "sha256": "e24450837b2d40489c65e8bbe1129bb956f7bc0d0e2d7a947c5f5c0cfeeeadb7"
   },
   {
     "path": "PrivateServer/docs/timing-and-movement.md",
     "type": "file",
-    "sha256": "ed56996b26e6ab63e25ca0b8414932a336acbc2e7c21943aeacc619eaa3712e5"
+    "sha256": "cded01b159592e54b8ea8f6afaea226f9f3b803b38a22543a856b61be682798c"
   },
   {
     "path": "PrivateServer/docs/trainer-sprites.md",

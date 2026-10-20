@@ -40,9 +40,13 @@ Compare simulation ticks and movement over the same elapsed interval. Confirm
 doors/routes and different-map exploration while partners remain stationary or
 enter menus/battles. Check that linked Soul Link events still arrive across maps.
 
-Current evidence is limited to independent local native relay movement in the
-0.1.5 lab. Cross-map behavior, Soul Link startup and multiple-FPS native checks
-have not passed. Windows Security blocked the separate 0.1.6 lab executable on
+The ordinary 0.1.5 lab passed a bounded independent-travel check: the guest left
+Eterna Forest for Route 205 and returned while the host stayed at its original
+position in Eterna Forest. Both remained connected to the relay. An earlier
+guest battle also left the host free and stationary. This verifies that tested
+boundary and battle, not every route, story transition or Soul Link event.
+Soul Link startup and multiple-FPS native checks have not passed. Windows
+Security blocked the separate 0.1.6 lab executable on
 2026-10-19, so that build's native tests are currently blocked. Source/build tests
 alone must not be presented as proof that these gameplay requirements work.
 
@@ -56,3 +60,18 @@ clock-zero boundaries, backward-clock defense and equal refill at 30/60/120/144
 callback rates. Protocol timestamps and durable expiry remain UTC-based.
 This concerns transport scheduling; the native game simulation/render loop still
 requires its own implementation review and in-game verification.
+
+
+## Implemented editor elapsed-time correction
+
+Scene effects and sprite previews now use a monotonic stopwatch. Timer callbacks
+request a redraw; animation time and pose selection derive from elapsed time.
+Delayed callbacks skip old presentation frames instead of slowing the animation
+or replaying an unbounded backlog. Checks cover pose boundaries, missed frames
+and 30/60/120/144 callback frequencies. This is verified editor behavior.
+
+The native 0.1.5 game also has supported `60Fps` and `60FpsSpeedFix` settings,
+already enabled by default in the lab. Its existing correction adjusts several
+movement increments and durations. That does not demonstrate preservation of
+original RNG/task cadence or arbitrary-FPS rendering; those native requirements
+remain open.

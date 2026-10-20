@@ -47,21 +47,22 @@ and federation between separate Inverna/world deployments remain in development.
 
 ## Soft reset for encounter hunting
 
-Use **Controls > Soft reset private game** while this launcher's private game is
-running. It sends the native L + R + Start + Select chord using the saved keyboard
-bindings in `sim_config.ini`; unsaved edits in the controls grid are not used.
-Defaults are **Q + E + Enter + Right Shift**, which can also be held directly in
-the game. The control does not kill/restart the process or edit/save Pokemon.
-Only the private game at this launcher's path is eligible. An unknown or blocked
-build, missing window, ambiguous process, held reset key, unsupported binding or
-failure to focus the intended window prevents sending the chord. It releases
-its keys after a short elapsed-time hold, including on failure or focus loss.
+Use **Controls > Reset private game to title** while this launcher's private game
+is running. Save before the encounter you intend to hunt and finish any active
+save first. The launcher requests a normal window close. If the game asks
+**Close the game?**, select **Yes** within 60 seconds to discard unsaved progress.
+**No** keeps playing; the pending reset expires without terminating the game.
+After it closes, the launcher starts the same private executable with its own
+private application-data folder. Continue your last save to retry the encounter.
+Co-op disconnects during reset. Resetting does not guarantee a shiny.
 
-The native game decides whether reset is permitted (saving/communication can
-inhibit it). A sent chord is not confirmation that the game reset. Save before
-an encounter if you want to return to it. Resetting does not guarantee a shiny.
-Default/remapped-key and duplicate-binding checks pass; in-game behavior in
-Together remains to be verified with a trusted client and native UI access.
+Only the executable at this launcher's private path is eligible. Unknown or
+blocked builds and multiple matching processes are refused. Reset does not force
+termination, inject keys, write Pokemon, restore saves or touch the original
+installed game. The old DS button chord was unreliable in the PC client and is
+no longer used. A local 0.1.5 test reopened the ordinary private client at title
+and confirmed that the existing `save*.bin` hashes were unchanged. A separate
+test kept the game alive after declining its close prompt.
 
 
 ## Manual relay joining in 0.1.5
