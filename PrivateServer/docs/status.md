@@ -17,11 +17,13 @@ This document is a release gate, not a promise that every requested feature is d
   earlier files. Repair preserves save, identity and binding canaries.
 - The separately audited 0.1.7 gift save adapter is enabled. Native collection,
   capture/Dex/storage/reload and two-player connection-status tests remain pending.
-- Native title rendering was visually observed in a focused isolated 0.1.7
-  window. Input guards detected human activity; further gameplay testing waits
-  for an uninterrupted private test window.
-- A supported native 0.1.7 Soul Link **Invite friends** route was identified;
-  it has not yet passed the two-client acceptance sequence.
+- Native title rendering and the **ONLINE** badge were visually observed in a
+  focused isolated 0.1.7 client signed in as its private test account. This is a
+  one-client authenticated-lobby check, not a two-peer relay gameplay pass.
+- The native Soul Link **Invite friends** action was exercised and reached a
+  Custom Soul Link review. It defaults to peer-to-peer **Right away**; native
+  **Later** hosting is badge-gated. The test stopped before final world creation.
+  Relay-only startup and the two-client acceptance sequence remain unverified.
 - The 0.1.7 retail player explicitly reports authoring unavailable and rejects
   Studio import entrypoints. No supported unattended headless world runtime was
   identified. Custom map/story execution and permanent native simulation are

@@ -257,7 +257,7 @@
   {
     "path": "PrivateServer/docs/native-017.md",
     "type": "file",
-    "sha256": "96b207a686c54da92cc37d8bbeb399d6f3e11b78a21d384d7d11d54e7f8c6425"
+    "sha256": "33e8489f5b2dd7467a9dc96f468dfd49ca4ea0ca2a55474441341ee3e1bef771"
   },
   {
     "path": "PrivateServer/docs/players.md",
@@ -282,12 +282,12 @@
   {
     "path": "PrivateServer/docs/soul-link.md",
     "type": "file",
-    "sha256": "e01ef72027015e73772b5e176d3d61a7953111d9e1ef5ed42eb9c84761eceb5d"
+    "sha256": "ec3234d11eeafef34e3778870cc8648b1ff8e63624bd51b72c1c4c9fb2434e17"
   },
   {
     "path": "PrivateServer/docs/status.md",
     "type": "file",
-    "sha256": "151359880c4de1c57c88c07fddfd93767410e30accdc31b6c75517b05a2ec89d"
+    "sha256": "1d8e9cc41c374bea147f64288d32c125e164ca88acf0b6bd5f518a739419a59e"
   },
   {
     "path": "PrivateServer/docs/timing-and-movement.md",

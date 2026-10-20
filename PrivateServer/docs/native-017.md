@@ -28,7 +28,8 @@ are needed or recommended.
 - **Connection indicator:** 0.1.7 uses its connection-status resolver in the
   title's previous default OFFLINE branch. Its ready relay connection can report
   ONLINE. This follows actual connection state; a saved name/token alone does not
-  establish a live connection. A visual two-client 0.1.7 check remains pending.
+  establish a live connection. A one-client private-account ONLINE panel was
+  observed live; the two-client relay gameplay check remains pending.
 - **Modern Pokémon capture:** the client contains a modern Pokédex-entry helper
   used after normal capture and by a native entry-generation guard. That guard
   alone does not test storage or saved caught state. The user reported the
@@ -88,8 +89,10 @@ The legacy injected trainer is not enabled for 0.1.7. Native MAIL uses its own r
 
 The 0.1.7 frontend supplies a new **Invite friends** action after selecting
 Soul Link. It deliberately switches creation into co-op context through the
-native initializer; use the primary action rather than the secondary custom-rule
-editor. Fresh two-peer Soul Link startup, arbitrary-FPS native gameplay,
+native initializer; its selection and review were observed live. However, it
+defaults to peer-to-peer **Right away**, while native **Later** hosting is locked
+until the first Gym badge. A relay-only start from the first route is not verified.
+Fresh two-peer Soul Link startup, arbitrary-FPS native gameplay,
 unattended world simulation and native map/story integration remain unfinished.
 See [verification status](status.md), [Soul Link](soul-link.md) and
 [timing/movement](timing-and-movement.md).
