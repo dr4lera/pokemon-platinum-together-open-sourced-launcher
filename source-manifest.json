@@ -32,7 +32,7 @@
   {
     "path": "MapStudio",
     "type": "git-submodule",
-    "commit": "cd9e3ee39ffd4f1f0d792977ba3a5a975f329391"
+    "commit": "bc31349e6d731f277626aaba7b57f5f0f2284f81"
   },
   {
     "path": "PrivateServer/Checks/GiftChecks.csproj",
@@ -197,7 +197,7 @@
   {
     "path": "PrivateServer/Server",
     "type": "git-submodule",
-    "commit": "bde660df3495d3451464686fc9406177b86cfeaf"
+    "commit": "f6c32987e59bb1c2e52f890e09ab2e0fe005bf86"
   },
   {
     "path": "PrivateServer/Shared/MartGift.cs",
@@ -292,7 +292,7 @@
   {
     "path": "README.md",
     "type": "file",
-    "sha256": "fbeda90a6d3ffe8b031a4d8ff7467224ac2b70a4612859d1c1125913bfb18541"
+    "sha256": "d40699dbe76a2c2b47725d10ab5c95483d05851888b0ed59d9ecb1116289df58"
   },
   {
     "path": "THIRD_PARTY_NOTICES.md",

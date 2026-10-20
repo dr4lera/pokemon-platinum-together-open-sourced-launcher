@@ -4,6 +4,27 @@ Community private-world tooling for an existing Platinum Together installation.
 This is a development source release, not the original game source. Bring your
 own supported game and ROM. No game assets, ROMs, saves or account keys are included.
 
+## Downloads
+
+**[Download the full Windows bundle — dev9 preview](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/releases/download/v0.1.0-dev.9/PokemonPlatinumTogetherOpenSourced-Windows-x64-dev9.zip)**
+
+Extract the complete ZIP and open `Launcher/PlatinumPrivateLauncher.exe`. Keep
+the folder together. MailSender, Map Studio, the backend and Windows runtimes
+are included. Read the [quick start](PrivateServer/docs/quick-start.md) first.
+
+| Component | Download page | Setup |
+|---|---|---|
+| Launcher and full Windows bundle | [dev9 release and checksum](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/releases/tag/v0.1.0-dev.9) | [Install and play](PrivateServer/docs/quick-start.md) |
+| Shared server / relay | [Server release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-server/releases/tag/v0.1.0-dev.9) | [Hosting guide](PrivateServer/docs/server-hosting.md) |
+| Standalone Windows editors | [Editors release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors/releases/tag/v0.1.0-dev.9) | [Map and sprite tools](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors#download) |
+| Separate Inverna hosting | [Inverna release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-inverna-server/releases/tag/v0.1.0-dev.9) | [Inverna setup](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-inverna-server#first-run) |
+| Separate world backend hosting | [World release](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-world-server/releases/tag/v0.1.0-dev.9) | [World setup](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-world-server#first-run) |
+
+Each repository's **Latest release** points to its public dev9 **development
+preview**. Each release includes a SHA-256 checksum file and documents its tested
+scope and unfinished native features. The Latest label identifies the current
+download; it does not establish completion of the native gameplay rework.
+
 ## Project repositories
 
 - [Launcher, mail app and full documentation](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher)
