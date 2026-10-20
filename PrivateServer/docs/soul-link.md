@@ -26,15 +26,25 @@ this preview advertises working Soul Link:
 
 Current evidence: the shipped native client includes Soul Link rule selection,
 partner-log exchange and linked-loss handlers. Local native relay movement has
-passed in a different test world. That evidence does **not** yet verify the Soul
-Link start/continue flow or its rules across two players. Normal native Join-code
-handoff remains under investigation. No new completed release has been uploaded.
+passed in a different test world, including an Eterna Forest/Route 205 round
+trip. That evidence does **not** yet verify Soul Link startup or linked rules
+across two players. The native code screen joins the party; **Menu > Party >
+Join World** is the tested manual world-entry route. Automatic handoff remains
+under investigation. Published updates remain development previews.
 
 The current 0.1.5 native creation path was inspected through **Host my world →
 New world → Challenge Run → Custom Challenge → Soul Link**. It still enters a
 solo-creation context and disables the final choice as **Needs a friend**, despite
 both lab identities belonging to the party. This is an unresolved client startup
 integration issue, not evidence that Soul Link needs a custom persistent server.
+
+A 2026-10-20 follow-up repeated creation in a new disposable profile with no
+copied saves or worlds. Read-only diagnostics confirmed normal image integrity,
+an authenticated private identity and party membership. The native Host screen
+required creating a world before relay or peer-to-peer hosting, and its fresh
+Custom Challenge > Soul Link choice still displayed **Needs a friend**. Fresh
+profile setup alone therefore does not resolve this startup issue. No game
+binary, process memory or rule validation was modified for this test.
 
 Discord invites use the same co-op party flow; see [Discord setup](discord.md).
 Custom persistent server configuration remains separate: [hosting](server-hosting.md).
