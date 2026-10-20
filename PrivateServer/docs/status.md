@@ -4,6 +4,11 @@ This document is a release gate, not a promise that every requested feature is d
 
 ## Current dev11 checks (2026-10-20)
 
+- Multiplayer support targets matching project-prepared clients. The user
+  reports their project builds connect to each other. A stock official-client
+  attempt was reported to fail with **World not found**, so that joining path
+  is unsupported in this preview. The cause and general Internet reachability
+  are not established. See [connection compatibility](players.md#connection-compatibility).
 - All 28 backend tests pass, including two-build relay authentication/routing,
   native 0.1.7 ready-field/limit checks and mismatched-build refusal.
 - Both standalone hosting wrappers pass real Windows startup, role/health and

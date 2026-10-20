@@ -1,5 +1,27 @@
 # Names, joining and friends
 
+## Connection compatibility
+
+Use matching project-prepared clients for the supported multiplayer setup.
+The user reports that their project builds connect to each other. Separate
+local 0.1.7 clients were also observed joining a direct-code Soul Link lobby,
+starting together and entering the world with matching saved rules. This is
+not a claim that arbitrary game versions or every Internet connection work.
+
+Joining a project host from a stock official client is **unsupported in this
+preview**. A remote official-client attempt was reported to show **World not
+found**; its cause was not established. Do not infer stock-client connectivity
+from the fact that preparation uses an unmodified official executable.
+Official game-file compatibility and official-service interoperability are
+separate checks.
+
+Private accounts, friends and relay require the same selected private backend;
+they are separate from the official service. Direct-code Internet reachability
+still depends on the host network and has not been independently verified here.
+See [Soul Link evidence](soul-link.md) and [verification status](status.md).
+
+## Private names and accounts
+
 Names are unique case-insensitively within one private server. A saved Ed25519
 identity proves account ownership; typing another person's name does not sign in
 as them. Independent servers have separate name registries. Native trainer names

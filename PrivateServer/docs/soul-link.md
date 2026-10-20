@@ -7,6 +7,11 @@ a `soulLink` option to hosting configuration, or select a custom world server to
 start it. The relay carries authenticated peer traffic; native game rules apply
 the encounter pairing, linked losses and partner logs.
 
+Use matching project-prepared clients. The user reports project-to-project
+joining works; stock official-client joining is unsupported in this preview
+after a reported **World not found** failure. This does not establish its
+cause or verify every remote network. See [connection compatibility](players.md#connection-compatibility).
+
 ## Native 0.1.7 selection route and connection limit
 
 **Host my world → New world → Challenge Run → Custom Challenge → Soul Link →

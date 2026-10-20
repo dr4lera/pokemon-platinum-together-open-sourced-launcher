@@ -5,6 +5,11 @@ client. It does not distribute the game or port old memory offsets into the new
 executable. Keep all matching official assets together; do not replace only
 `Platinum.exe` in an old private game.
 
+This is game-file compatibility. Multiplayer support targets matching
+project-prepared clients; stock official-client joining is unsupported in this
+preview after a user-reported **World not found** failure. Its cause remains
+undetermined. See [connection compatibility](players.md#connection-compatibility).
+
 ## Verified identity
 
 | Field | Value |

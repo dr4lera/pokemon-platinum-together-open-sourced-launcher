@@ -32,7 +32,7 @@
   {
     "path": "MapStudio",
     "type": "git-submodule",
-    "commit": "2181e4f11cc6bf1275352012cd0a6eba0877c6f4"
+    "commit": "8753433aaeb5f131419825f7f4d55af3e3580bf2"
   },
   {
     "path": "PrivateServer/Checks/GiftChecks.csproj",
@@ -202,7 +202,7 @@
   {
     "path": "PrivateServer/Server",
     "type": "git-submodule",
-    "commit": "93075784f8189b05443dfcf61ba053be3bd958e4"
+    "commit": "a5d9ed7caf4fd8013706b3efafb5f845756c2f1f"
   },
   {
     "path": "PrivateServer/Shared/MartGift.cs",
@@ -257,12 +257,12 @@
   {
     "path": "PrivateServer/docs/native-017.md",
     "type": "file",
-    "sha256": "0edc5159437dcda5252392d308553ed57a5b2434ac241f80dd58ff52253398cb"
+    "sha256": "ba77684a10bbdb32d58e7a0ea8abae978bbce5d8be9a036893891b9d991882dc"
   },
   {
     "path": "PrivateServer/docs/players.md",
     "type": "file",
-    "sha256": "1c4563791ae6e859b9291d1c86a0a270bdea4517baa21a9040d3664de185b071"
+    "sha256": "6d0d79fa26e3b412bd0f1b0c6b319cd3e6d98c319b58355662f0deb767563ec6"
   },
   {
     "path": "PrivateServer/docs/quick-start.md",
@@ -282,12 +282,12 @@
   {
     "path": "PrivateServer/docs/soul-link.md",
     "type": "file",
-    "sha256": "6f3080c59335facd084e32f8d164549db22130ad7de7343887e65a8ba7ff53d0"
+    "sha256": "6a69833bc12a698e7f4823d6584c840dcffb5c0e24ca4e736e6e2343c7c70077"
   },
   {
     "path": "PrivateServer/docs/status.md",
     "type": "file",
-    "sha256": "a017d1e98ecbbce3030afe5b73840ffb2e824d80954b1f59c3c623c867712399"
+    "sha256": "fa2e8cef6975992b3d9c6486e121fc897ddf240fc5a0f3fe1b2c780ebf39bbfe"
   },
   {
     "path": "PrivateServer/docs/timing-and-movement.md",
@@ -302,7 +302,7 @@
   {
     "path": "README.md",
     "type": "file",
-    "sha256": "3d1160e1a3a8865f889a91cdc63ecd3b81da228a102112257c027e04c328c20f"
+    "sha256": "e7c4095b39ecfe318c137d66a1c439006fe5b957764d5cc7b527fe77ef94737d"
   },
   {
     "path": "THIRD_PARTY_NOTICES.md",

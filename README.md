@@ -4,6 +4,11 @@ Community private-world tooling for an existing Platinum Together installation.
 This is a development source release, not the original game source. Bring your
 own supported game and ROM. No game assets, ROMs, saves or account keys are included.
 
+Multiplayer support targets matching project-prepared clients. Joining a project
+host from a stock official client is unsupported in this preview; a user reported
+**World not found**. Official game-file compatibility does not establish
+official-service interoperability. See [connection compatibility](PrivateServer/docs/players.md#connection-compatibility).
+
 ## Downloads
 
 **[Download the full Windows bundle — dev11 preview](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/releases/download/v0.1.0-dev.11/PokemonPlatinumTogetherOpenSourced-Windows-x64-dev11.zip)**
