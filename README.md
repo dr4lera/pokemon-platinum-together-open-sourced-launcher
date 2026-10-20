@@ -1,4 +1,4 @@
-# Plat Together Open Sourced
+# Pokemon Platinum Together Open Sourced - Launcher
 
 Community private-world tooling for an existing Platinum Together installation.
 This is a development source release, not the original game source. Bring your
@@ -6,9 +6,9 @@ own supported game and ROM. No game assets, ROMs, saves or account keys are incl
 
 ## Project repositories
 
-- [Launcher, mail app and full documentation](https://github.com/dr4lera/plat-together-open-sourced)
-- [Server and relay backend](https://github.com/dr4lera/plat-together-server)
-- [Map Studio and trainer sprite tools](https://github.com/dr4lera/plat-together-map-studio)
+- [Launcher, mail app and full documentation](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher)
+- [Server and relay backend](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-server)
+- [Map Studio and trainer sprite tools](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors)
 
 ## Start here
 
@@ -26,8 +26,8 @@ own supported game and ROM. No game assets, ROMs, saves or account keys are incl
 Clone recursively so the server and editor match the pinned revisions:
 
 ```powershell
-git clone --recurse-submodules https://github.com/dr4lera/plat-together-open-sourced.git
-cd plat-together-open-sourced
+git clone --recurse-submodules https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher.git
+cd pokemon-platinum-together-open-sourced-launcher
 dotnet build PrivateServer/Launcher/Launcher.csproj -c Release
 dotnet build PrivateServer/MailSender/MailSender.csproj -c Release
 dotnet run --project PrivateServer/Checks/GiftChecks.csproj -c Release
@@ -51,3 +51,14 @@ Original tooling developed with OpenAI Codex assistance for dr4lera. Credit the
 original Platinum Together developers for their game and creator website, and
 the PKHeX authors for PKHeX.Core. No official endorsement is implied.
 GPL-3.0-or-later; see [LICENSE](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md).
+
+
+## Separate hosting projects
+
+Server settings live in server config files and host administration tools. The
+[Inverna server](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-inverna-server) and [world server](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-world-server) projects
+contain distinct hosting guides and deployment configs for shared-city and co-op
+protocol services. These repositories are development source previews. Both depend on the
+[shared backend](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-server).
+See the [configuration reference](https://github.com/dr4lera/pokemon-platinum-together-open-sourced-launcher/blob/main/PrivateServer/docs/server-config.md)
+for roles, independent data folders and current native/federation limitations.

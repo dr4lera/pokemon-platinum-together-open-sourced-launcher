@@ -13,6 +13,7 @@ jobs:
         with:
           dotnet-version: '10.0.x'
       - run: dotnet build PrivateServer/Launcher/Launcher.csproj -c Release
+      - run: dotnet run --project PrivateServer/DiscordChecks/DiscordChecks.csproj -c Release
       - run: dotnet build PrivateServer/MailSender/MailSender.csproj -c Release
       - run: dotnet run --project PrivateServer/Checks/GiftChecks.csproj -c Release
       - shell: pwsh

@@ -1,6 +1,6 @@
 [submodule "PrivateServer/Server"]
 	path = PrivateServer/Server
-	url = https://github.com/dr4lera/plat-together-server.git
+	url = https://github.com/dr4lera/pokemon-platinum-together-open-sourced-server.git
 [submodule "MapStudio"]
 	path = MapStudio
-	url = https://github.com/dr4lera/plat-together-map-studio.git
+	url = https://github.com/dr4lera/pokemon-platinum-together-open-sourced-editors.git
