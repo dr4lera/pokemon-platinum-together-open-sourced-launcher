@@ -23,9 +23,13 @@ This document is a release gate, not a promise that every requested feature is d
 - The native Soul Link **Invite friends** action was exercised. User-assisted
   navigation reached a hosting/invite lobby with **Custom Soul Link** rules
   locked. A separate clean 0.1.7 guest joined by direct-connect code, matched
-  rules and readied Player 2. Host Start advanced both to the introduction.
+  rules and readied Player 2. Host Start advanced both to the introduction,
+  then both entered the starting room with visible peer characters and matching
+  native-written Soul Link settings. Both native logs report successful saves.
   This local peer-to-peer check used **Right away**; native **Later** hosting
-  is badge-gated. Relay startup, linked-loss and reconnection remain unverified.
+  is badge-gated. Relay startup, linked-loss, reconnection and independent
+  cross-map travel in 0.1.7 remain unverified. Native direct-world invitations
+  by username remain disabled; use the tested local code route for this check.
 - The 0.1.7 retail player explicitly reports authoring unavailable and rejects
   Studio import entrypoints. No supported unattended headless world runtime was
   identified. Custom map/story execution and permanent native simulation are

@@ -92,7 +92,10 @@ Soul Link. It deliberately switches creation into co-op context through the
 native initializer; its selection, review and locked hosting/invite lobby were
 observed live with user-assisted navigation. A separate clean 0.1.7 guest
 joined by direct-connect code, readied, and entered the introduction when the
-host started. This establishes local coordinated startup. The route
+host started. Both subsequently entered the starting room with visible peers
+and matching native-written game_type=1, rules=3, rule_mask=2207 and party=2.
+Both logged successful saves. This establishes local coordinated startup and
+world entry; direct-world invitations by username remain disabled. The route
 defaults to peer-to-peer **Right away**, while native **Later** hosting is locked
 until the first Gym badge. A relay start from the first route is not verified.
 Soul Link linked-loss/reconnection and relay startup, arbitrary-FPS native gameplay,

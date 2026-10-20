@@ -17,8 +17,18 @@ lobby with those rules locked. A separate clean 0.1.7 client joined through its
 direct-connect code, displayed matching rules, and readied Player 2. The host
 then started both clients into the new-world introduction. The guest's
 introduction explicitly acknowledged the host's Nuzlocke with Soul Link rules.
-This verifies local lobby joining, readiness and coordinated startup; linked gameplay and relay
-startup still need their own checks.
+Both clients subsequently entered the starting room, and the host rendered
+both named player characters. Their native-written active world settings agree
+on game_type=1, rules=3, rule_mask=2207, party=2 and level_caps=1; both native
+logs report successful saves. This verifies local lobby joining, readiness,
+coordinated startup, world entry and matching saved rules. Linked-loss,
+reconnection, independent cross-map travel and relay startup still need their
+own 0.1.7 checks.
+
+The native username-invite control remains disabled: this preview does not
+advertise or implement 0.1.7's separate `world_invites` protocol. Direct-connect
+codes worked in the local check above. Do not enable that capability flag alone
+or describe the disabled username-invite control as working.
 
 The action selects **FRIENDS: RIGHT AWAY**. The actual settings UI displays a
 peer-to-peer IP warning, and the observed lobby used that connection mode.
